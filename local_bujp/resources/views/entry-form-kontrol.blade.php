@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -193,7 +196,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data BUJP</h1>
+            <h1 class="m-0">Form Kontrol</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -203,21 +206,23 @@
     <!-- Main content -->
     <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Menambah Data BUJP</h3>
+                <h3 class="card-title">Menambah Form Kontrol</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form>
+                <form method="POST" action="/tambah-kontrol-bulanan">
+                  @csrf
                 <div class="row">
                   <div class="col-sm-4">
                       <div class="form-group">
                         <label>Nama BUJP</label>
-                        <select class="form-control select2bs4" style="width: 100%;">
-                        <option>PT. A</option>
-                        <option>PT. B</option>
-                        <option>PT. C</option>
-                        <option>PT. D</option>
-                  </select>
+                        <select class="form-control select2bs4 nama-bujp" style="width: 100%;" name="NAMA_BUJP">
+                          @foreach ($filter_bujp as $item)
+                              
+                          <option value="{{$item->ID_BUJP}}">{{$item->NAMA_BUJP}}</option>
+  
+                          @endforeach
+                    </select>
                       </div>
                     </div>
                     <div class="col-sm-4">
@@ -226,20 +231,14 @@
                         <label>Unit</label>
                         <select class="form-control select2bs4" style="width: 100%;">
                         <option>Corporate</option>
-                        <option>Summarecon Bekasi</option>
-                        <option>Summarecon Serpong</option>
-                        <option>Summarecon Bogor</option>
                   </select>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Lokasi</label>
+                        <label>Objek Pengamananan</label>
                         <select class="form-control select2bs4" style="width: 100%;">
                         <option>Jakarta barat</option>
-                        <option>Jakarta Timur</option>
-                        <option>Jakarta Utara</option>
-                        <option>Jakarta Selatan</option>
                   </select>
                       </div>
                     </div>
@@ -259,10 +258,16 @@
                         <input type="date" class="form-control" readonly>
                       </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Periode Kontrol</label>
-                        <input type="Text" class="form-control" placeholder="Periode Kontrol" readonly>
+                        <label>Bulan</label>
+                        <input type="Text" class="form-control" placeholder="Periode Kontrol" value="{{date('M')}}" name="PERIODE_KONTROL_BULAN" readonly>
+                      </div>
+                    </div>
+                    <div class="col-sm-1">
+                      <div class="form-group">
+                        <label>Tahun</label>
+                        <input type="Text" class="form-control col_sm-6" placeholder="Periode Kontrol" value="{{date('Y')}}" name="PERIODE_KONTROL_TAHUN"  readonly>
                       </div>
                     </div>
                     <div class="col-sm-3">
@@ -293,19 +298,19 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Standar Tender (Sesuai SPK)</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="SDM_KEHADIRAN_STANDAR">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Realisasi</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="SDM_KEHADIRAN_REALISASI">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Tindakan</label>
-                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada">
+                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada" name="SDM_KEHADIRAN_TINDAKAN">
                       </div>
                     </div>
                   </div>
@@ -318,19 +323,19 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Standar Tender (Sesuai SPK)</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="SDM_PERGANTIAN_ANGGOTA_STANDAR">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Realisasi</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="SDM_PERGANTIAN_ANGGOTA_REALISASI">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Tindakan</label>
-                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada">
+                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada" name="SDM_PERGANTIAN_ANGGOTA_TINDAKAN">
                       </div>
                     </div>
                   </div>
@@ -349,19 +354,19 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Standar Tender (Sesuai SPK)</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="ADMINISTRASI_INVOICE_STANDAR">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Realisasi</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="ADMINISTRASI_INVOICE_REALISASI">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Tindakan</label>
-                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada">
+                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada" name="ADMINISTRASI_INVOICE_TINDAKAN">
                       </div>
                     </div>
                   </div>
@@ -374,19 +379,19 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Standar Tender (Sesuai SPK)</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="ADMINISTRASI_GIRO_STANDAR">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Realisasi</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="ADMINISTRASI_GIRO_REALISASI">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Tindakan</label>
-                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada">
+                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada" name="ADMINISTRASI_GIRO_TINDAKAN">
                       </div>
                     </div>
                   </div>
@@ -405,19 +410,19 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Standar Tender (Sesuai SPK)</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="GAJI_TAKE_HOME_PAY_STANDAR">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Realisasi</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="GAJI_TAKE_HOME_PAY_REALISASI">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Tindakan</label>
-                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada">
+                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada" name="GAJI_TAKE_HOME_PAY_TINDAKAN">
                       </div>
                     </div>
                   </div>
@@ -430,22 +435,23 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Standar Tender (Sesuai SPK)</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="GAJI_REALISASI_STANDAR">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Realisasi</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="GAJI_REALISASI_REALISASI">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Tindakan</label>
-                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada">
+                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada" name="GAJI_REALISASI_TINDAKAN">
                       </div>
                     </div>
                   </div>
+                  
 
                   <div class="row">
                   <div class="col-sm-3">
@@ -462,7 +468,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Standar Tender (Sesuai SPK)</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="">
                       </div>
                     </div>
                     <div class="col-sm-3">
@@ -489,7 +495,7 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="form-group" style="margin: 0; position: relative; top: 60%; -ms-transform: translateY(-50%); transform: translateY(-50%);">
-                      <input type="text" class="form-control" placeholder="Kejadian A, Kejadian B, Kejadian C">
+                      <input type="text" class="form-control" placeholder="Kejadian A, Kejadian B, Kejadian C" name="KEJADIAN">
                       </div>
                     </div>
                   </div>
@@ -552,5 +558,15 @@
 <script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="assets/dist/js/adminlte.js"></script>
+<!-- Select2 -->
+<script src="assets/plugins/select2/js/select2.full.min.js"></script>
+
+<script>
+  $(function () {
+  $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    });
+  })
+  </script>
 </body>
 </html>

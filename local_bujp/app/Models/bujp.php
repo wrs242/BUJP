@@ -15,6 +15,6 @@ class bujp extends Model
 
     public function unit()
     {
-        //return $this->belongsTo('App\Unit');
+      return $this->belongsTo('App\Models\Unit', 'ID_UNIT');
     }
 }

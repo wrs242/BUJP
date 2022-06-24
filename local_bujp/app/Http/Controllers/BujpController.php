@@ -16,7 +16,7 @@ class BujpController extends Controller
      */
     public function index()
     {
-        $bujp = bujp::all();
+        $bujp = bujp::with('unit')->get();
         return view('data-bujp',compact('bujp'));
         
     }
@@ -89,6 +89,9 @@ class BujpController extends Controller
         $bujp = bujp::all();
         $filter_kontrak = $kontrak->where('ID_BUJP',$ID_BUJP);
         $filter_bujp = $bujp->where('ID_BUJP',$ID_BUJP);
+        $ID_BUJP = (int)$ID_BUJP;
+        $ID_BUJP = $ID_BUJP - 1;
+       
 
         if (empty($filter_kontrak)){
             $filter_kontrak = null;
@@ -96,7 +99,7 @@ class BujpController extends Controller
         else{
         
         };
-        return view('/entry-kontrak',compact('filter_bujp','filter_kontrak'));
+        return view('/entry-kontrak',compact('filter_bujp','filter_kontrak','ID_BUJP'));
     }
 
     public function store_kontrak(Request $request)

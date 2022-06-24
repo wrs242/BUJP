@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\DashboarController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FormKontrolController;
+use App\Http\Controllers\PenilaianTahunanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RekrutmenController;
 use App\Http\Controllers\StakeholderController;
@@ -43,18 +45,21 @@ Route::get('/findtelpkantor', [BujpController::class, 'findtelpkantor']);
 route::get('/{id}/kontrak',[BujpController::class, 'entry_kontrak']);
 route::get('/store-kontrak',[BujpController::class, 'store_kontrak']);
 
+Route::get('/form-kontrol', [FormKontrolController::class, 'index']);
+Route::get('/tambah-kontrol-bulanan', [FormKontrolController::class, 'entry']);
+Route::post('/tambah-kontrol-bulanan', [FormKontrolController::class, 'store']);
 
-Route::get('/penilaian-tahunan', function () {
-    return view('data-penilaian-tahunan');
-});
+
+Route::get('/penilaian-tahunan', [PenilaianTahunanController::class, 'index']);
+Route::get('/tambah-penilaian-tahunan', [PenilaianTahunanController::class, 'entry']);
+Route::post('/tambah-penilaian-tahunan', [PenilaianTahunanController::class, 'store']);
+
+
 
 Route::get('/boq', function () {
     return view('data-boq');
 });
 
-Route::get('/form-kontrol', function () {
-    return view('data-form-kontrol');
-});
 
 Route::get('/standarisasi-kompetensi', function () {
     return view('standarisasi-kompetensi');
@@ -70,12 +75,6 @@ Route::get('/standarisasi-rekrutmen', function () {
 
 Route::get('/standarisasi-proses-tagihan', function () {
     return view('standarisasi-proses-tagihan');
-});
-Route::get('/tambah-kontrol-bulanan', function () {
-    return view('entry-form-kontrol');
-});
-Route::get('/tambah-penilaian-tahunan', function () {
-    return view('entry-penilaian-tahunan');
 });
 Route::get('/form-jabatan-security', function () {
     return view('form-jabatan-security');

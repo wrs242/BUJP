@@ -229,32 +229,30 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                  <th>No.</th>
                       <th>Unit Summarecon</th>
                       <th>Nama BUJP</th>
                       <th>Lokasi</th>
                       <th>Jumlah Personel</th>
-                      <th>Awal Kontrak</th>
-                      <th>Akhir Kontrak</th>
                       <th>Periode Kontrol</th>
                       <th>Tanggal Pembuatan Form Kontrol</th>
                       <th>Dibuat Oleh</th>
                   </tr>
                   </thead>
                   <tbody>
+                    @foreach($kontrol as $kontrol)
                   <tr>
-                  <td>1</td>
-                      <td>CO</td>
-                      <td>PT. Gemawisesa Multi Jasa</td>
-                      <td>Pulo Asem</td>
-                      <td>13</td>
-                      <td>1 Jan 2021</td>
-                      <td>31 Des 2021</td>
-                      <td>November 2021</td>
-                      <td>25 November 2021</td>
-                      <td>Dimas</td>
+                    
+
+                      <td>{{$kontrol->bujp->unit->NAMA_UNIT}}</td>
+                      <td>{{$kontrol->bujp->NAMA_BUJP}}</td>
+                      <td>{{$kontrol->bujp->OBJEK_PENGAMANAN}}</td>
+                      <td>{{$kontrol->bujp->JUMLAH_PERSONEL}}</td>
+                      <td>{{$kontrol->PERIODE_KONTROL_BULAN}} {{$kontrol->PERIODE_KONTROL_TAHUN}}</td>
+                      <td>{{$kontrol->DATE_CREATED}}</td>
+                      <td>{{$kontrol->USER_CREATED}}</td>
                     
                   </tr>
+                  @endforeach
                 </table>
               </div>
             </div>

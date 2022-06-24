@@ -220,28 +220,26 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                <th>No.</th>
                     <th>Unit Summarecon</th>
                     <th>Nama BUJP</th>
                     <th>Lokasi</th>
-                    <th>Awal Kontrak</th>
-                    <th>Akhir Kontrak</th>
+                    <th>Tahun Penilaian</th>
                     <th>Score Keseluruhan</th>
                     <th>Dibuat Oleh</th>
                 </tr>
                 </thead>
                 <tbody>
+                  @foreach($penilaian as $penilaian)
                 <tr>
-                <td>1</td>
-                    <td>CO</td>
-                    <td>PT. Gemawisesa Multi Jasa</td>
-                    <td>Pulo Asem</td>
-                    <td>1 Februari 2021</td>
-                    <td>31 Januari 2022</td>
-                    <td>102</td>
-                    <td>Dimas</td>
+                    <td>{{$penilaian->bujp->unit->NAMA_UNIT}}</td>
+                    <td>{{$penilaian->bujp->NAMA_BUJP}}</td>
+                    <td>{{$penilaian->bujp->OBJEK_PENGAMANAN}}</td>
+                    <td>{{$penilaian->TAHUN_PENILAIAN}}</td>
+                    <td>{{$penilaian->TOTAL_NILAI}}</td>
+                    <td>{{$penilaian->USER_CREATED}}</td>
                   
                 </tr>
+                @endforeach
               </table>
               
             </div>

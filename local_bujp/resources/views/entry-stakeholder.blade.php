@@ -202,22 +202,21 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
         <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title"></h3>
+                <h3 class="card-title">Menambahkan Stakeholder Wilayah</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <h6>Isian yang bertanda (<span style="color: red">*</span>) wajib diisi</h6>
                 <form action="/entry-stakeholder" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="row">
                   <div class="col-sm-4">
                       <!-- select -->
                       <div class="form-group">
-                        <label>Kawasan</label>
-                        <select class="form-control" name="KAWASAN">
-                          <option>Corporate</option>
+                        <label>Kawasan <span style="color: red">*</span></label>
+                        <select class="form-control" name="KAWASAN" required>
                           <option>Summarecon Kelapa Gading</option>
                           <option>Summarecon Bogor</option>
                           <option>Summarecon Serpong</option>
@@ -226,14 +225,14 @@
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Wilayah</label>
-                        <input type="text" class="form-control" placeholder="Wilayah" name="WILAYAH">
+                        <label>Wilayah <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Wilayah" name="WILAYAH" required>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Instansi</label>
-                        <select class="form-control" name="INSTANSI">
+                        <label>Instansi <span style="color: red">*</span></label>
+                        <select class="form-control" name="INSTANSI" required>
                           <option>POLRI</option>
                           <option>TNI</option>
                           <option>Pemerintahan</option>
@@ -245,8 +244,8 @@
                   <div class="row">
                   <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Alamat Instansi</label>
-                        <textarea class="form-control" rows="3" placeholder="Alamat" name="ALAMAT_INSTANSI"></textarea>
+                        <label>Alamat Instansi <span style="color: red">*</span></label>
+                        <textarea class="form-control" rows="2" placeholder="Alamat" name="ALAMAT_INSTANSI" required></textarea>
                       </div>
                     </div>
                   </div>
@@ -269,8 +268,8 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group">
-                            <label>Nama</label>
-                            <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_BARU">
+                            <label>Nama <span style="color: red">*</span></label>
+                            <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_BARU" required>
                           </div>
                         </div>
                       </div>
@@ -283,8 +282,8 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group">
-                            <label>Pangkat</label>
-                            <input type="text" class="form-control" placeholder="pangkat" name="PANGKAT_P_BARU">
+                            <label>Pangkat <span style="color: red">*</span></label>
+                            <input type="text" class="form-control" placeholder="pangkat" name="PANGKAT_P_BARU" required>
                           </div>
                         </div>
                       </div>
@@ -298,19 +297,19 @@
                         <div class="col-sm-3">
                           <div class="form-group">
                             <label>Akhir Menjabat</label>
-                            <input type="date" class="form-control" name="AKHIR_MENJABAT_P_BARU">
+                            <input type="date" class="form-control" name="AKHIR_MENJABAT_P_LAMA">
                           </div>
                         </div>
                         <div class="col-sm-3">
                           <div class="form-group">
-                            <label>Mulai Menjabat</label>
-                            <input type="date" class="form-control" name="MULAI_MENJABAT_P_BARU">
+                            <label>Mulai Menjabat <span style="color: red">*</span></label>
+                            <input type="date" class="form-control" name="MULAI_MENJABAT_P_BARU" required>
                           </div>
                         </div>
                         <div class="col-sm-3">
                           <div class="form-group">
-                            <label>Akhir Menjabat</label>
-                            <input type="date" class="form-control" name="AKHIR_MENJABAT_P_BARU">
+                            <label>Akhir Menjabat <span style="color: red">*</span></label>
+                            <input type="date" class="form-control" name="AKHIR_MENJABAT_P_BARU" required>
                           </div>
                         </div>
                       </div>
@@ -323,8 +322,8 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group">
-                            <label>Jumlah Personel</label>
-                            <input type="text" class="form-control" placeholder="Lokasi Pindah" name="JUMLAH_PERSONEL_P_BARU">
+                            <label>Jumlah Personel <span style="color: red">*</span></label>
+                            <input type="text" class="form-control" placeholder="Lokasi Pindah" name="JUMLAH_PERSONEL_P_BARU" required>
                           </div>
                         </div>
                       </div>
@@ -365,8 +364,8 @@
                         </div>
                         <div class="col-sm-6">
                           <div class="form-group">
-                            <label>No. Telp</label>
-                            <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_BARU">
+                            <label>No. Telp <span style="color: red">*</span></label>
+                            <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_BARU" required>
                           </div>
                         </div>
                       </div>
@@ -379,8 +378,8 @@
                           </div>
                           <div class="col-sm-6">
                             <div class="form-group">
-                              <label>Foto Pejabat</label>
-                              <input type="file" class="form-control" name="FOTO_P_BARU">
+                              <label>Foto Pejabat <span style="color: red">*</span></label>
+                              <input type="file" class="form-control" name="FOTO_P_BARU" required>
                             </div>
                           </div>
                         </div>
@@ -410,7 +409,7 @@
             
             
     <!-- /.content -->
-</div>
+
 </section>
   </div>
   <!-- /.content-wrapper -->

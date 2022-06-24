@@ -5,16 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class unit extends Model
+class penilaian_tahunan extends Model
 {
-    protected $table = 'unit';
+    use HasFactory;
+
+    protected $table = 'penilaian_tahunan';
     public $timestamps = false;
     protected $guarded = [];
-    protected  $primaryKey = 'ID_UNIT';
-    use HasFactory;
+    protected  $primaryKey = 'ID_PENILAIAN_TAHUNAN';
 
     public function bujp()
  {
-   return $this->hasMany(bujp::class, 'ID_BUJP');
+   return $this->belongsTo(bujp::class, 'ID_BUJP');
  }
 }
+

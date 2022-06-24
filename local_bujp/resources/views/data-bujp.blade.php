@@ -220,25 +220,22 @@
                   <tr>
                       <th>Unit Summarecon</th>
                       <th>Nama BUJP</th>
-                      <th>Lokasi</th>
+                      <th>Objek Pengamanan</th>
                       <th>Jumlah Personel</th>
-                      <th>Awal Kontrak</th>
-                      <th>Akhir Kontrak</th>
-                      <th>Kontrak Ke</th>
-                      <th>Action</th>
+                      <th>Status</th>
+                      <th>Keterangan Status</th>
                   </tr>
                   </thead>
                   <tbody>
                     @foreach ($bujp as $bujp)
                     
                   <tr>
-                      <td>{{$bujp->NAMA_BUJP}}</td>
+                      <td>{{!empty($bujp->ID_UNIT) ? $bujp->Unit->NAMA_UNIT:'' }}</td>
                       <td>{{$bujp->NAMA_BUJP}}</td>
                       <td>{{$bujp->OBJEK_PENGAMANAN}}</td>
                       <td>{{$bujp->JUMLAH_PERSONEL}}</td>
-                      <td>{{$bujp->JUMLAH_PERSONEL}}</td>
-                      <td>{{$bujp->JUMLAH_PERSONEL}}</td>
-                      <td>{{$bujp->JUMLAH_PERSONEL}}</td>
+                      <td>{{$bujp->STATUS}}</td>
+                      <td>{{$bujp->KETERANGAN_STATUS}}</td>
                       <td>
                         <a href="{{$bujp->ID_BUJP}}/kontrak"><button class="btn btn-block btn-secondary">Kontrak</button></a>
                       </td>

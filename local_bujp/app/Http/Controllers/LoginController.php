@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\hash;
-use app\Models\User;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -18,25 +17,43 @@ class LoginController extends Controller
     {
 
         
-        $credentials = $request-> validate([
+        $request-> validate([
             'username' => 'required',
             'password' => 'required'
         ]);
         
-        $credentials['password']= md5($credentials['password']);
-        
+        $request['password']= md5($request['password']);
+
+        $user = user::where('username', '=', $request->username)->first();
+        if($user){
+            $pass = user::where('password','=', $request->password)->first();
+            if ($pass){
+                $request->session()->regenerate();
+                return redirect()->intended('/dashboard');
+
+        } else {
+            return back()->with('fail', 'password salah.');
+
+        } 
+        } else {
+        return back()->with('fail', 'username salah.');
+        }
+
+        /*
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
             
             return redirect()->intended('/dashboard');
         }
-        return redirect()->intended('/dashboard');
-        //return back()->with('loginerror','login fail');
-       
+        return back()->withErrors([
+            'username' => 'The provided credentials do not match our records.',
+            ])->onlyInput('username');
+            */
 
-       //User::create($credentials);
+
     }
+
     
     
 }

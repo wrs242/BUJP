@@ -219,8 +219,8 @@
                   <div class="row">
                   <div class="col-sm-4">
                       <div class="form-group">
-                      <label>Nama BUJP</label>
-                      <select class="form-control select2bs4 nama-bujp" style="width: 100%;" name="NAMA_BUJP">
+                      <label>Nama BUJP <span style="color: red">*</span></label>
+                      <select class="form-control select2bs4 nama-bujp" style="width: 100%;" name="NAMA_BUJP" required>
                         @foreach ($filter_bujp as $item)
                             
                         <option value="{{$item->ID_BUJP}}">{{$item->NAMA_BUJP}}</option>
@@ -233,8 +233,8 @@
                     
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Unit</label>
-                        <select class="form-control select2bs4" style="width: 100%;" name="NAMA_UNIT">
+                        <label>Unit <span style="color: red">*</span></label>
+                        <select class="form-control select2bs4" style="width: 100%;" name="NAMA_UNIT" required>
                           @foreach ($unit as $item)
                               
                           <option value="{{$item->ID_UNIT}}">{{$item->NAMA_UNIT}}</option>
@@ -249,20 +249,20 @@
                     <div class="col-sm-4">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Objek Pengamanan</label>
-                        <input type="text" class="form-control" placeholder="Objek Pengamanan" name="OBJEK_PENGAMANAN">
+                        <label>Objek Pengamanan <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Objek Pengamanan" name="OBJEK_PENGAMANAN" required>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Jumlah Personel</label>
-                        <input type="number" class="form-control" placeholder="Jumlah Personel" name="JUMLAH_PERSONEL">
+                        <label>Jumlah Personel <span style="color: red">*</span></label>
+                        <input type="number" class="form-control" placeholder="Jumlah Personel" name="JUMLAH_PERSONEL" required>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Status</label>
-                        <select class="custom-select" name="STATUS">
+                        <label>Status <span style="color: red">*</span></label>
+                        <select class="custom-select" name="STATUS" required>
                           <option>Kerjasama</option>
                           <option>Pengakhiran Kontrak Sepihak</option>
                           <option>Pengunduran Diri</option>
@@ -280,31 +280,31 @@
                   <div class="row">
                   <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Harga Perorang</label>
+                        <label>Harga Perorang <span style="color: red">*</span></label>
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text">Rp.</span>
                         </div>
-                        <input type="number" min="0" class="form-control"  name="HARGA_PERORANG">
+                        <input type="number" min="0" class="form-control"  name="HARGA_PERORANG" required>
                         </div>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Take Home Pay (Rp.)</label>
+                        <label>Take Home Pay (Rp.) <span style="color: red">*</span></label>
                         <div class="input-group">
                           <div class="input-group-prepend">
                             <span class="input-group-text">Rp.</span>
                         </div>
-                        <input type="number" min="0" class="form-control" name="TAKE_HOME_PAY_RUPIAH">
+                        <input type="number" min="0" class="form-control" name="TAKE_HOME_PAY_RUPIAH" required>
                         </div>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Take Home Pay (%)</label>
+                        <label>Take Home Pay (%) <span style="color: red">*</span></label>
                         <div class="input-group">
-                        <input type="number" step=".01" min="0" class="form-control" name="TAKE_HOME_PAY_PERSEN">
+                        <input type="number" step=".01" min="0" class="form-control" name="TAKE_HOME_PAY_PERSEN" required>
                         <div class="input-group-append">
                           <span class="input-group-text">%</span>
                         </div>
@@ -332,14 +332,14 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Direktur</label>
-                        <input type="Text" class="form-control" placeholder="Nama Direktur" name="NAMA_DIREKTUR">
+                        <label>Direktur <span style="color: red">*</span></label>
+                        <input type="Text" class="form-control" placeholder="Nama Direktur" name="NAMA_DIREKTUR" required>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>No. Telp Direktur</label>
-                        <input type="text" class="form-control" placeholder="No. Telp" name="TELP_DIREKTUR">
+                        <label>No. Telp Direktur <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="No. Telp" name="TELP_DIREKTUR" required>
                       </div>
                     </div>
                     <div class="col-sm-4">
@@ -361,104 +361,6 @@
             </div>
 
 
-            <div class="card card-warning">
-              <div class="card-header">
-                <h3 class="card-title">Keterangan Kontrak</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <form>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>Awal Kontrak</label>
-                        <input type="date" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>Akhir Kontrak</label>
-                        <input type="date" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>Tahun Kontrak ke</label>
-                        <input type="number" class="form-control">
-                      </div>
-                    </div>
-                    
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>Kontrak ke</label>
-                        <input type="number" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>No. SPK</label>
-                        <input type="text" class="form-control" placeholder="No. SPK">
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>Upload SPK</label>
-                        <input type="file" class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>Adendum</label>
-                        <select class="custom-select">
-                          <option>Adendum</option>
-                          <option>Tidak Adendum</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="form-group">
-                        <label>Keterangan Adendum</label>
-                        <input type="text" class="form-control" placeholder="Kosongkan jika tidak ada">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                      <div class="col-sm-12">
-                      <button type="submit" class="btn btn-primary">Simpan</button>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </form>
-                <div class="card-body">
-                <table id="example2" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                  <th>No.</th>
-                      <th>Awal Kontrak</th>
-                      <th>Akhir Kontrak</th>
-                      <th>Tahun Kontrak</th>
-                      <th>Kontrak ke</th>
-                      <th>Kontrak Terbaru</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                  <td>1</td>
-                      <td>1/5/2021</td>
-                      <td>1/5/2022</td>
-                      <td>4</td>
-                      <td>2</td>
-                      <td>Ya</td>
-                    
-                  </tr>
-                </table>
-                </div>
-              </div>
               <!-- /.card-body -->
             </div>
     <!-- /.content -->

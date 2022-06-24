@@ -27,9 +27,9 @@
   </div>
   @endif
 
-  @if(session()->has('loginerror'))
+  @if(session()->has('fail'))
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      {{ session('loginerror') }}
+      {{ session('fail') }}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   @endif

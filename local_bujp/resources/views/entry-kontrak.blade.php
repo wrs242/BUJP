@@ -212,13 +212,13 @@
 
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Kontrak <strong>{{$filter_bujp[0]->NAMA_BUJP}}</strong></h3> 
+                <h3 class="card-title">Kontrak <strong>{{$filter_bujp[$ID_BUJP]->NAMA_BUJP}}</strong></h3> 
               </div>
               
               <!-- /.card-header -->
               <div class="card-body">
                 <form method="GET" action="/store-kontrak">
-                  <input type="hidden" value="{{$filter_bujp[0]->ID_BUJP}}" name="ID_BUJP">
+                  <input type="hidden" value="{{$filter_bujp[$ID_BUJP]->ID_BUJP}}" name="ID_BUJP">
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-group">

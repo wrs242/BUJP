@@ -196,7 +196,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data BUJP</h1>
+            <h1 class="m-0">Penilaian Tahunan</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -204,22 +204,27 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
+    <div class="container-fluid">
+      <div class="row">
+      <section class="col-lg-10 connectedSortable">
     <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Menambah Data BUJP</h3>
+                <h3 class="card-title">Menambah Data Penilaian Tahunan</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form>
+                <form method="POST" action="/tambah-penilaian-tahunan" name="penilaian_tahunan">
+                  @csrf
                   <div class="row">
                   <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Nama BUJP</label>
-                        <select class="form-control select2bs4" style="width: 100%;">
-                        <option>PT. A</option>
-                        <option>PT. B</option>
-                        <option>PT. C</option>
-                        <option>PT. D</option>
+                        <label>Nama BUJP <span style="color: red">*</span></label>
+                        <select class="form-control select2bs4" style="width: 100%;" name="ID_BUJP" required>
+                          @foreach ($filter_bujp as $item)
+                              
+                          <option value="{{$item->ID_BUJP}}">{{$item->NAMA_BUJP}}</option>
+  
+                          @endforeach
                   </select>
                       </div>
                     </div>
@@ -237,7 +242,7 @@
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Lokasi</label>
+                        <label>Objek Pengamanan</label>
                         <select class="form-control select2bs4" style="width: 100%;">
                         <option>Kantor A</option>
                         <option>Cluster B</option>
@@ -281,29 +286,31 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_SCHEDULE" id="NILAI_SCHEDULE" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="3" readonly>
+                      <input type="number" class="form-control" value="3" name="BOBOT_SCHEDULE" id="BOBOT_SCHEDULE" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_SCHEDULE" id="N_X_B_SCHEDULE" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_SCHEDULE" id="KETERANGAN_SCHEDULE">
                       </div>
                     </div>
                   </div>
+
+                 
 
                   <div class="row">
                     <div class="col-sm-12">
@@ -316,26 +323,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_KINERJA" id="NILAI_KINERJA" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="4" readonly>
+                      <input type="number" class="form-control" value="4" name="BOBOT_KINERJA" id="BOBOT_KINERJA" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_KINERJA" id="N_X_B_KINERJA" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_KINERJA" id="KETERANGAN_KINERJA">
                       </div>
                     </div>
                   </div>
@@ -351,26 +358,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_TARGET_PENGAMANAN" id="NILAI_TARGET_PENGAMANAN" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="5" readonly>
+                      <input type="number" class="form-control" value="5" name="BOBOT_TARGET_PENGAMANAN" id="BOBOT_TARGET_PENGAMANAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_TARGET_PENGAMANAN" id="N_X_B_TARGET_PENGAMANAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_TARGET_PENGAMANAN" id="KETERANGAN_TARGET_PENGAMANAN">
                       </div>
                     </div>
                   </div>
@@ -386,26 +393,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_PELANGGARAN" id="NILAI_PELANGGARAN" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="4" readonly>
+                      <input type="number" class="form-control" value="4" name="BOBOT_PELANGGARAN" id="BOBOT_PELANGGARAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_PELANGGARAN" id="N_X_B_PELANGGARAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_PELANGGARAN" id="KETERANGAN_PELANGGARAN">
                       </div>
                     </div>
                   </div>
@@ -421,26 +428,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_SDM" id="NILAI_SDM" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="4" readonly>
+                      <input type="number" class="form-control" value="4" name="BOBOT_SDM" id="BOBOT_SDM" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_SDM" id="N_X_B_SDM" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" name="KETERANGAN_SDM" id="KETERANGAN_SDM" placeholder="Keterangan">
                       </div>
                     </div>
                   </div>
@@ -456,26 +463,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_KEHADIRAN" id="NILAI_KEHADIRAN" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="5" readonly>
+                      <input type="number" class="form-control" value="5" name="BOBOT_KEHADIRAN" id="BOBOT_KEHADIRAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_KEHADIRAN" id="N_X_B_KEHADIRAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_KEHADIRAN" id="KETERANGAN_KEHADIRAN">
                       </div>
                     </div>
                   </div>
@@ -491,26 +498,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_ALAT_ALAT_KERJA" id="NILAI_ALAT_ALAT_KERJA" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="3" readonly>
+                      <input type="number" class="form-control" value="3" name="BOBOT_ALAT_ALAT_KERJA" id="BOBOT_ALAT_ALAT_KERJA" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_ALAT_ALAT_KERJA" id="N_X_B_ALAT_ALAT_KERJA" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_ALAT_ALAT_KERJA" id="KETERANGAN_ALAT_ALAT_KERJA">
                       </div>
                     </div>
                   </div>
@@ -526,26 +533,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_KETEPATAN_LAPORAN" id="NILAI_KETEPATAN_LAPORAN" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="2" readonly>
+                      <input type="number" class="form-control" value="2" name="BOBOT_KETEPATAN_LAPORAN" id="BOBOT_KETEPATAN_LAPORAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_KETEPATAN_LAPORAN" id="N_X_B_KETEPATAN_LAPORAN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_KETEPATAN_LAPORAN" id="KETERANGAN_KETEPATAN_LAPORAN">
                       </div>
                     </div>
                   </div>
@@ -561,26 +568,26 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_KOMPLAIN" id="NILAI_KOMPLAIN" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="2" readonly>
+                      <input type="number" class="form-control" value="2" name="BOBOT_KOMPLAIN" id="BOBOT_KOMPLAIN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" name="N_X_B_KOMPLAIN" id="N_X_B_KOMPLAIN" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_KOMPLAIN" id="KETERANGAN_KOMPLAIN">
                       </div>
                     </div>
                   </div>
@@ -596,32 +603,30 @@
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
-                      <label>Nilai</label>
-                      <input type="number" class="form-control" placeholder="Nilai" min="1" max="3">
+                      <label>Nilai <span style="color: red">*</span></label>
+                      <input type="number" class="form-control nilai" placeholder="Nilai" min="1" max="3" name="NILAI_ADMINISTRASI" id="NILAI_ADMINISTRASI" required>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Bobot</label>
-                      <input type="number" class="form-control" value="2" readonly>
+                      <input type="number" class="form-control" value="2" name="BOBOT_ADMINISTRASI" id="BOBOT_ADMINISTRASI" readonly>
                       </div>
                     </div>
                     <div class="col-sm-1">
                       <div class="form-group">
                       <label>Nilai X Bobot</label>
-                      <input type="number" class="form-control" readonly>
+                      <input type="number" class="form-control" value="" name="N_X_B_ADMINISTRASI" id="N_X_B_ADMINISTRASI" readonly>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                       <label>Keterangan</label>
-                      <input type="text" class="form-control" placeholder="Keterangan">
+                      <input type="text" class="form-control" placeholder="Keterangan" name="KETERANGAN_ADMINISTRASI" id="KETERANGAN_ADMINISTRASI">
                       </div>
                     </div>
                   </div>
                   
-                  
-
                   
                   <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -632,8 +637,24 @@
               </div>
               <!-- /.card-body -->
             </div>
+      </section>
+      <section class="col-lg-2 connectedSortable">
+    <div class="card card-warning">
+      <div class="card-header">
+        <h6 class="card-title">Kejadian Selama Tahun ini</h6>
+      </div>
+      <div class="card-body">
+        <div class="row">
+
+
+      </div>
+    </div>
+      </section>
+      </div>
     <!-- /.content -->
   </div>
+  </div>
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
@@ -685,12 +706,74 @@
 <script src="assets/plugins/select2/js/select2.full.min.js"></script>
 
 <script>
+  function hitung()
+    {
+    let NILAI_SCHEDULE = $("#NILAI_SCHEDULE").val();
+    let BOBOT_SCHEDULE = $("#BOBOT_SCHEDULE").val();
+    let N_X_B_SCHEDULE = NILAI_SCHEDULE * BOBOT_SCHEDULE;
+    $("#N_X_B_SCHEDULE").val(N_X_B_SCHEDULE); 
+
+    let NILAI_KINERJA = $("#NILAI_KINERJA").val();
+    let BOBOT_KINERJA = $("#BOBOT_KINERJA").val();
+    let N_X_B_KINERJA = NILAI_KINERJA * BOBOT_KINERJA;
+    $("#N_X_B_KINERJA").val(N_X_B_KINERJA); 
+
+    let NILAI_TARGET_PENGAMANAN = $("#NILAI_TARGET_PENGAMANAN").val();
+    let BOBOT_TARGET_PENGAMANAN = $("#BOBOT_TARGET_PENGAMANAN").val();
+    let N_X_B_TARGET_PENGAMANAN = NILAI_TARGET_PENGAMANAN * BOBOT_TARGET_PENGAMANAN;
+    $("#N_X_B_TARGET_PENGAMANAN").val(N_X_B_TARGET_PENGAMANAN); 
+
+    let NILAI_PELANGGARAN = $("#NILAI_PELANGGARAN").val();
+    let BOBOT_PELANGGARAN = $("#BOBOT_PELANGGARAN").val();
+    let N_X_B_PELANGGARAN = NILAI_PELANGGARAN * BOBOT_PELANGGARAN;
+    $("#N_X_B_PELANGGARAN").val(N_X_B_PELANGGARAN); 
+
+    let NILAI_SDM = $("#NILAI_SDM").val();
+    let BOBOT_SDM = $("#BOBOT_SDM").val();
+    let N_X_B_SDM = NILAI_SDM * BOBOT_SDM;
+    $("#N_X_B_SDM").val(N_X_B_SDM); 
+
+    let NILAI_KEHADIRAN = $("#NILAI_KEHADIRAN").val();
+    let BOBOT_KEHADIRAN = $("#BOBOT_KEHADIRAN").val();
+    let N_X_B_KEHADIRAN = NILAI_KEHADIRAN * BOBOT_KEHADIRAN;
+    $("#N_X_B_KEHADIRAN").val(N_X_B_KEHADIRAN); 
+
+    let NILAI_ALAT_ALAT_KERJA = $("#NILAI_ALAT_ALAT_KERJA").val();
+    let BOBOT_ALAT_ALAT_KERJA = $("#BOBOT_ALAT_ALAT_KERJA").val();
+    let N_X_B_ALAT_ALAT_KERJA = NILAI_ALAT_ALAT_KERJA * BOBOT_ALAT_ALAT_KERJA;
+    $("#N_X_B_ALAT_ALAT_KERJA").val(N_X_B_ALAT_ALAT_KERJA); 
+
+    let NILAI_KETEPATAN_LAPORAN = $("#NILAI_KETEPATAN_LAPORAN").val();
+    let BOBOT_KETEPATAN_LAPORAN = $("#BOBOT_KETEPATAN_LAPORAN").val();
+    let N_X_B_KETEPATAN_LAPORAN = NILAI_KETEPATAN_LAPORAN * BOBOT_KETEPATAN_LAPORAN;
+    $("#N_X_B_KETEPATAN_LAPORAN").val(N_X_B_KETEPATAN_LAPORAN); 
+
+    let NILAI_KOMPLAIN = $("#NILAI_KOMPLAIN").val();
+    let BOBOT_KOMPLAIN = $("#BOBOT_KOMPLAIN").val();
+    let N_X_B_KOMPLAIN = NILAI_KOMPLAIN * BOBOT_KOMPLAIN;
+    $("#N_X_B_KOMPLAIN").val(N_X_B_KOMPLAIN); 
+
+    let NILAI_ADMINISTRASI = $("#NILAI_ADMINISTRASI").val();
+    let BOBOT_ADMINISTRASI = $("#BOBOT_ADMINISTRASI").val();
+    let N_X_B_ADMINISTRASI = NILAI_ADMINISTRASI * BOBOT_ADMINISTRASI;
+    $("#N_X_B_ADMINISTRASI").val(N_X_B_ADMINISTRASI); 
+    }
 $(function () {
     //Initialize Select2 Elements
     $('.select2bs4').select2({
-      theme: 'bootstrap4'
+      theme: 'bootstrap4' 
     });
+
+    
+
+    $(".nilai").on("change keyup",hitung)
+    
+
   })
+  
+
+   
+  
 </script>
 </body>
 </html>

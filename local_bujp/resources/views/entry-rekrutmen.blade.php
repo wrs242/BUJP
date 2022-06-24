@@ -203,36 +203,37 @@
     <!-- Main content -->
     <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title"></h3>
+                <h3 class="card-title">Menambahkan Rekrutmen</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <h6>Isian yang bertanda (<span style="color: red">*</span>) wajib diisi</h6>
                 <form method="POST" action="entry-rekrutmen" enctype="multipart/form-data">
                   @csrf
                   <div class="row">
                     <div class="col-sm-3">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Nama Perusahaan</label>
-                        <input type="text" class="form-control" name="NAMA_BUJP" placeholder="Nama Perusahaan">
+                        <label>Nama Perusahaan <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" name="NAMA_BUJP" placeholder="Nama Perusahaan" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>No. Telp</label>
-                        <input type="text" class="form-control" name="TELP_KANTOR" placeholder="No. Telp">
+                        <label>No. Telp <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" name="TELP_KANTOR" placeholder="No. Telp" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Tanggal Terima Company Profile</label>
-                        <input type="date" name="TGL_TERIMA_COMPANY_PROFILE" class="form-control">
+                        <label>Tanggal Terima Company Profile <span style="color: red">*</span></label>
+                        <input type="date" name="TGL_TERIMA_COMPANY_PROFILE" class="form-control" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Alamat</label>
-                        <textarea class="form-control" rows="2" name="ALAMAT" placeholder="Alamat"></textarea>
+                        <label>Alamat <span style="color: red">*</span></label>
+                        <textarea class="form-control" rows="2" name="ALAMAT" placeholder="Alamat" required></textarea>
                       </div>
                     </div>
                     
@@ -241,8 +242,8 @@
                   <div class="row">
                     <div class="col-sm-2">
                     <div class="form-group">
-                        <label>Undangan Presentasi</label>
-                        <select class="form-control" name="UNDANGAN_PRESENTASI">
+                        <label>Undangan Presentasi <span style="color: red">*</span></label>
+                        <select class="form-control" name="UNDANGAN_PRESENTASI" required>
                         <option></option>
                           <option>Ya</option>
                           <option >Tidak</option>
@@ -278,8 +279,8 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Milik Sendiri</label>
-                        <select class="form-control" name="KEPEMILIKAN_KANTOR">
+                        <label>Milik Sendiri <span style="color: red">*</span></label>
+                        <select class="form-control" name="KEPEMILIKAN_KANTOR" required>
                         <option></option>
                           <option>Ya</option>
                           <option>Sewa</option>
@@ -294,8 +295,8 @@
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label for="FOTO_KANTOR" class="form-label">Upload Foto Kantor</label>
-                        <input type="file" name="FOTO_KANTOR" class="form-control" id="FOTO_KANTOR">
+                        <label for="FOTO_KANTOR" class="form-label">Upload Foto Kantor <span style="color: red">*</span></label>
+                        <input type="file" name="FOTO_KANTOR" class="form-control" id="FOTO_KANTOR" required>
                       </div>
                     </div>
                   </div>
@@ -308,8 +309,8 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Akta Pendirian Perusahaan</label>
-                        <select name="AKTA_PENDIRIAN_PERUSAHAAN" class="form-control">
+                        <label>Akta Pendirian Perusahaan <span style="color: red">*</span></label>
+                        <select name="AKTA_PENDIRIAN_PERUSAHAAN" class="form-control" required>
                         <option></option>
                           <option>Ya</option>
                           <option>Tidak</option>
@@ -318,26 +319,26 @@
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Tanggal Pendirian Perusahaan</label>
-                        <input type="date" name="TGL_PENDIRIAN" class="form-control">
+                        <label>Tanggal Pendirian Perusahaan <span style="color: red">*</span></label>
+                        <input type="date" name="TGL_PENDIRIAN" class="form-control" required>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Tanggal Akta Perubahan</label>
-                        <input type="date" name="AKTA_PERUBAHAN" class="form-control">
+                        <label>Tanggal Akta Perubahan <span style="color: red">*</span></label>
+                        <input type="date" name="AKTA_PERUBAHAN" class="form-control" required>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>No. Notaris</label>
-                        <input type="text" name="NO_NOTARIS" class="form-control" placeholder="No. Notaris">
+                        <label>No. Notaris <span style="color: red">*</span></label>
+                        <input type="text" name="NO_NOTARIS" class="form-control" placeholder="No. Notaris" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto Akta</label>
-                        <input type="file" name="FOTO_AKTA" class="form-control">
+                        <label>Upload Foto Akta <span style="color: red">*</span></label>
+                        <input type="file" name="FOTO_AKTA" class="form-control" required>
                       </div>
                     </div>
                   </div>
@@ -350,20 +351,20 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Nomor SIO</label>
-                        <input type="text" name="NO_SIO" class="form-control" placeholder="no. SIO">
+                        <label>Nomor SIO <span style="color: red">*</span></label>
+                        <input type="text" name="NO_SIO" class="form-control" placeholder="no. SIO" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Masa Berlaku</label>
-                        <input type="date" name="MASA_BERLAKU_SIO" class="form-control">
+                        <label>Masa Berlaku <span style="color: red">*</span></label>
+                        <input type="date" name="MASA_BERLAKU_SIO" class="form-control" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto SIO</label>
-                        <input type="file" name="FOTO_SIO" class="form-control">
+                        <label>Upload Foto SIO <span style="color: red">*</span></label>
+                        <input type="file" name="FOTO_SIO" class="form-control" required>
                       </div>
                     </div>
                   </div>
@@ -375,8 +376,8 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Status BPJS Ketenaga Kerjaan</label>
-                        <select class="form-control" name="STATUS_BPJS_KETENAGA_KERJAAN">
+                        <label>Status BPJS Ketenaga Kerjaan <span style="color: red">*</span></label>
+                        <select class="form-control" name="STATUS_BPJS_KETENAGA_KERJAAN" required>
                         <option></option>
                           <option>Terdaftar</option>
                           <option>Tidak Terdaftar</option>
@@ -391,7 +392,7 @@
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto BPJS Ketenaga Kerjaan</label>
+                        <label>Upload Foto BPJS Ketenaga Kerjaan </label>
                         <input type="file" name="FOTO_BPJS_KETENAGA_KERJAAN" class="form-control">
                       </div>
                     </div>
@@ -405,8 +406,8 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Status BPJS Kesehatan</label>
-                        <select class="form-control" name="STATUS_BPJS_KESEHATAN">
+                        <label>Status BPJS Kesehatan <span style="color: red">*</span></label>
+                        <select class="form-control" name="STATUS_BPJS_KESEHATAN" required>
                         <option></option>
                           <option>Terdaftar</option>
                           <option>Tidak Terdaftar</option>
@@ -416,12 +417,12 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>No. Sertifikat</label>
-                        <input type="text" name="NO_BPJS_KESEHATAN" class="form-control" placeholder="No. Sertifikat">
+                        <input type="text" name="NO_BPJS_KESEHATAN" class="form-control" placeholder="No. Sertifikat" >
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto BPJS Kesehatan</label>
+                        <label>Upload Foto BPJS Kesehatan </label>
                         <input type="file" name="FOTO_BPJS_KESEHATAN" class="form-control">
                       </div>
                     </div>
@@ -435,8 +436,8 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>Upload Rekening Koran</label>
-                        <input type="file" name="FOTO_REKENING_KORAN" class="form-control">
+                        <label>Upload Rekening Koran <span style="color: red">*</span></label>
+                        <input type="file" name="FOTO_REKENING_KORAN" class="form-control" required>
                       </div>
                     </div>
                   </div>
@@ -449,14 +450,14 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Mobil Patroli</label>
-                        <input type="number" name="MOBIL_PATROLI" class="form-control" min="0">
+                        <label>Mobil Patroli <span style="color: red">*</span></label>
+                        <input type="number" name="MOBIL_PATROLI" class="form-control" min="0" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Kepemilikan Mobil</label>
-                        <select class="form-control" name="KEPEMILIKAN_MOBIL">
+                        <label>Kepemilikan Mobil <span style="color: red">*</span></label>
+                        <select class="form-control" name="KEPEMILIKAN_MOBIL" required>
                         <option></option>
                           <option>Milik Pribadi</option>
                           <option>Sewa</option>
@@ -465,14 +466,14 @@
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Motor Patroli</label>
-                        <input type="number" name="MOTOR_PATROLI" class="form-control" min="0">
+                        <label>Motor Patroli <span style="color: red">*</span></label>
+                        <input type="number" name="MOTOR_PATROLI" class="form-control" min="0" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Kepemilikan Motor</label>
-                        <select name="KEPEMILIKAN_MOTOR" class="form-control">
+                        <label>Kepemilikan Motor <span style="color: red">*</span></label>
+                        <select name="KEPEMILIKAN_MOTOR" class="form-control" required>
                         <option></option>
                           <option>Milik Pribadi</option>
                           <option>Sewa</option>
@@ -603,8 +604,8 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Bukti Lapor SPT Perusahaan</label>
-                        <input type="file" name="SPT_PERUSAHAAN" class="form-control">
+                        <label>Bukti Lapor SPT Perusahaan <span style="color: red">*</span></label>
+                        <input type="file" name="SPT_PERUSAHAAN" class="form-control" required>
                       </div>
                     </div>
                   </div>
@@ -618,8 +619,8 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
-                      <h4><strong>Hasil Seleksi Awal</strong></h5>
-                      <select class="form-control" name="HASIL_SELEKSI">
+                      <h4><strong>Hasil Seleksi Awal</strong> <span style="color: red">*</span></h5>
+                      <select class="form-control" name="HASIL_SELEKSI" required>
                         <option></option>
                           <option>Lulus</option>
                           <option>Tidak Lulus</option>
@@ -628,8 +629,8 @@
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
-                      <h4><strong>Status</strong></h5>
-                      <select class="form-control" name="STATUS">
+                      <h4><strong>Status</strong> <span style="color: red">*</span></h5>
+                      <select class="form-control" name="STATUS" required>
                         <option></option>
                           <option>Kerjasama</option>
                           <option>Blacklist</option>
