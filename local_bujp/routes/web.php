@@ -2,13 +2,14 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginController_past;
 use App\Http\Controllers\FormKontrolController;
 use App\Http\Controllers\PenilaianTahunanController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RekrutmenController;
 use App\Http\Controllers\StakeholderController;
 use App\Http\Controllers\BujpController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,9 @@ use App\Http\Controllers\BujpController;
 |
 */
 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/', [HomeController::class, 'index']);
 
-Route::post('/login', [LoginController::class, 'authentication']);
+//Route::post('/login', [LoginController::class, 'authentication']);
 
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -36,11 +37,14 @@ Route::post('/entry-rekrutmen', [RekrutmenController::class, 'store']);
 Route::get('/stakeholder', [StakeholderController::class, 'index']);
 Route::get('/entry-stakeholder', [StakeholderController::class, 'entry']);
 Route::post('/entry-stakeholder', [StakeholderController::class, 'store']);
+Route::get('/{id}/detail-stakeholder', [StakeholderController::class, 'detail']);
+Route::get('/{id}/edit-stakeholder', [StakeholderController::class, 'edit']);
+Route::post('/store-edit-stakeholder', [StakeholderController::class, 'store_edit']);
+Route::get('/{id}/delete-stakeholder', [StakeholderController::class, 'delete']);
 
 Route::get('/bujp', [BujpController::class, 'index']);
 Route::get('/entry-bujp', [BujpController::class, 'entry']);
 Route::post('/entry-bujp', [BujpController::class, 'store']);
-Route::get('/findtelpkantor', [BujpController::class, 'findtelpkantor']);
 
 route::get('/{id}/kontrak',[BujpController::class, 'entry_kontrak']);
 route::get('/store-kontrak',[BujpController::class, 'store_kontrak']);
@@ -82,3 +86,9 @@ Route::get('/form-jabatan-security', function () {
 Route::get('/form-promosi-jabatan', function () {
     return view('form-promosi-jabatan');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
