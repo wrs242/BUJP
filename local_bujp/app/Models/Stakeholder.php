@@ -15,4 +15,9 @@ class Stakeholder extends Model
     
     protected $guarded = [];
     protected $nullable = ['NAMA_P_LAMA','PANGKAT_P_LAMA', 'MULAI_MENJABAT_P_LAMA', 'AKHIR_MENJABAT_P_LAMA','JUMLAH_PERSONEL_P_LAMA', 'LOKASI_TUGAS_BARU_P_LAMA', 'TAHUN_ANGKATAN_P_LAMA', 'TELP_P_LAMA', 'LOKASI_TUGAS_LAMA_P_BARU', 'FOTO_P_LAMA'];
+
+    public function USER_CREATED()
+    {
+        return $this->belongsTo('App\Models\User', 'USER_CREATED');
+    }
 }

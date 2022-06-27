@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class PenilaianTahunanController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $penilaian = penilaian_tahunan::all();

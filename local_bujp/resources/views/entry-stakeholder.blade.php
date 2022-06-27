@@ -216,28 +216,26 @@
                       <!-- select -->
                       <div class="form-group">
                         <label>Kawasan <span style="color: red">*</span></label>
-                        <select class="form-control" name="KAWASAN" required>
-                          <option>Summarecon Kelapa Gading</option>
-                          <option>Summarecon Bogor</option>
-                          <option>Summarecon Serpong</option>
-                        </select>
+                        <input type="text" class="form-control" name="KAWASAN" placeholder="Kawasan" required>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label>Wilayah <span style="color: red">*</span></label>
-                        <input type="text" class="form-control" placeholder="Wilayah" name="WILAYAH" required>
+                        <input type="text" class="form-control" placeholder="Wilayah" name="WILAYAH"  required>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label>Instansi <span style="color: red">*</span></label>
-                        <select class="form-control" name="INSTANSI" required>
-                          <option>POLRI</option>
-                          <option>TNI</option>
-                          <option>Pemerintahan</option>
-                        </select>
+                        <div class="form-group row">
+                          <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="Instansi" name="INSTANSI">
+                          </div>
+                          <div class="col-sm-6">
                         <input type="text" class="form-control" placeholder="Wilayah Hukum Instansi" name="WILAYAH_HUKUM">
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -245,155 +243,123 @@
                   <div class="col-sm-4">
                       <div class="form-group">
                         <label>Alamat Instansi <span style="color: red">*</span></label>
-                        <textarea class="form-control" rows="2" placeholder="Alamat" name="ALAMAT_INSTANSI" required></textarea>
+                        <textarea class="form-control" rows="2" placeholder="Alamat" name="ALAMAT_INSTANSI"  required></textarea>
                       </div>
                     </div>
                   </div>
 
 
-                      <div class="row">
-                        <div class="col-sm-6">
-                        <h5>Pejabat Lama</h5>
-                      </div>
-                      <div class="col-sm-6">
-                        <h5>Pejabat Baru</h5>
-                      </div>
-                      </div>
-                      <div class="row">
-                      <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Nama</label>
-                            <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_LAMA">
+                  <table class="table table-borderless m-0 p-0">
+                    <tr>
+                    <th colspan="2" class="text-center"><h5><strong>Pejabat Lama</strong></h5></th>
+                    <th colspan="2" class="text-center"><h5><strong>Pejabat Baru</strong></h5></th>
+                    </tr>
+                    <tr class="">
+                      
+                      <td class="col-3"><div class="form-group">
+                        <label>Nama</label>
+                        <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_LAMA">
+                      </div></td>
+                      <td rowspan="5" class="col-3"><img id="PREVIEW_P_LAMA" src="" width="100%"></td>
+                      <td class="col-3"><div class="form-group">
+                        <label>Nama <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_BARU"  required>
+                      </div></td>
+                      <td rowspan="5" class="col-3"><img id="PREVIEW_P_BARU" src="" width="100%"></td>
+                    </tr>
+                    <tr>
+                      <td class="col-3"><div class="form-group">
+                        <label>Pangkat</label>
+                        <input type="text" class="form-control" placeholder="Pangkat" name="PANGKAT_P_LAMA" >
+                      </div></td>
+                      <td class="col-3"><div class="form-group">
+                        <label>Pangkat <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Pangkat" name="PANGKAT_P_BARU" required>
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td class="col-3"><div class="form-group">
+                        <label>Periode Jabatan</label>
+                        <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label>Awal</label>
+                        <input type="date" class="form-control" name="MULAI_MENJABAT_P_LAMA">
+                        </div>
+                        <div class="form-group col-sm-6">
+                          <label>Akhir</label>
+                        <input type="date" class="form-control" name="AKHIR_MENJABAT_P_LAMA">
                           </div>
                         </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Nama <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_BARU" required>
+                      </div></td>
+                      <td class="col-3"><div class="form-group">
+                        <label>Periode Jabatan</label>
+                        <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label>Awal <span style="color: red">*</span></label>
+                        <input type="date" class="form-control" name="AKHIR_MENJABAT_P_BARU" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                          <label>Akhir <span style="color: red">*</span></label>
+                        <input type="date" class="form-control"name="MULAI_MENJABAT_P_BARU" required>
                           </div>
                         </div>
-                      </div>
-                      <div class="row">
-                      <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Pangkat</label>
-                            <input type="text" class="form-control" placeholder="pangkat" name="PANGKAT_P_LAMA">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Pangkat <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" placeholder="pangkat" name="PANGKAT_P_BARU" required>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                      <div class="col-sm-3">
-                          <div class="form-group">
-                            <label>Mulai Menjabat</label>
-                            <input type="date" class="form-control" name="MULAI_MENJABAT_P_LAMA">
-                          </div>
-                        </div>
-                        <div class="col-sm-3">
-                          <div class="form-group">
-                            <label>Akhir Menjabat</label>
-                            <input type="date" class="form-control" name="AKHIR_MENJABAT_P_LAMA">
-                          </div>
-                        </div>
-                        <div class="col-sm-3">
-                          <div class="form-group">
-                            <label>Mulai Menjabat <span style="color: red">*</span></label>
-                            <input type="date" class="form-control" name="MULAI_MENJABAT_P_BARU" required>
-                          </div>
-                        </div>
-                        <div class="col-sm-3">
-                          <div class="form-group">
-                            <label>Akhir Menjabat <span style="color: red">*</span></label>
-                            <input type="date" class="form-control" name="AKHIR_MENJABAT_P_BARU" required>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                      <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Jumlah Personel</label>
-                            <input type="text" class="form-control" placeholder="Lokasi Pindah" name="JUMLAH_PERSONEL_P_LAMA">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Jumlah Personel <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" placeholder="Lokasi Pindah" name="JUMLAH_PERSONEL_P_BARU" required>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                      <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Lokasi Tugas Baru</label>
-                            <input type="text" class="form-control" placeholder="Lokasi Pindah" name="LOKASI_TUGAS_BARU_P_LAMA">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Lokasi Tugas Lama</label>
-                            <input type="text" class="form-control" placeholder="Lokasi Pindah" name="LOKASI_TUGAS_LAMA_P_BARU">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                      <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Tahun Angkatan</label>
-                            <input type="text" class="form-control" placeholder="Tahun angkatan" name="TAHUN_ANGKATAN_P_LAMA">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>Tahun Angkatan</label>
-                            <input type="text" class="form-control" placeholder="Tahun angkatan" name="TAHUN_ANGKATAN_P_BARU">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                      <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>No. Telp</label>
-                            <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_LAMA">
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="form-group">
-                            <label>No. Telp <span style="color: red">*</span></label>
-                            <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_BARU" required>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                              <label>Foto Pejabat</label>
-                              <input type="file" class="form-control" name="FOTO_P_LAMA">
-                            </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <div class="form-group">
-                              <label>Foto Pejabat <span style="color: red">*</span></label>
-                              <input type="file" class="form-control" name="FOTO_P_BARU" required>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td class="col-3"><div class="form-group">
+                        <label>Jumlah Personel</label>
+                        <input type="text" class="form-control" placeholder="Jumlah Personel" name="JUMLAH_PERSONEL_P_LAMA">
+                      </div></td>
+                      <td class="col-3"><div class="form-group">
+                        <label>Jumlah Personel <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Jumlah Personel" name="JUMLAH_PERSONEL_P_BARU" required>
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td class="col-3"><div class="form-group">
+                        <label>Lokasi Tugas Baru</label>
+                        <input type="text" class="form-control" placeholder="Lokasi Tugas Baru" name="LOKASI_TUGAS_BARU_P_LAMA">
+                      </div></td>
+                      <td class="col-3"><div class="form-group">
+                        <label>Lokasi Tugas Lama</label>
+                        <input type="text" class="form-control" placeholder="Lokasi Tugas Lama" name="LOKASI_TUGAS_LAMA_P_BARU">
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td class="col-3"><div class="form-group">
+                        <label>Tahun Angkatan</label>
+                        <input type="text" class="form-control" placeholder="Tahun Angkatan" name="TAHUN_ANGKATAN_P_LAMA">
+                      </div></td>
+                      <td class="col-3">
+                        <input type="file"  placeholder="Upload Foto" name="FOTO_P_LAMA" id="FOTO_P_LAMA">
+                      </td>
+                      <td class="col-3"><div class="form-group">
+                        <label>Tahun Angkatan <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Tahun Angkatan" name="TAHUN_ANGKATAN_P_BARU" required>
+                      </div></td>
+                      <td class="col-3">
+                        <input type="file"  placeholder="Upload Foto" name="FOTO_P_BARU" id="FOTO_P_BARU" required><span style="color: red">*</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="col-3"><div class="form-group">
+                        <label>No. Telp</label>
+                        <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_LAMA">
+                      </div></td>
+                      <td class="col-3"></td>
+                      <td class="col-3"><div class="form-group">
+                        <label>No. Telp <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_BARU" required>
+                      </div></td>
+                    </tr>
+                    </table>
 
-                      
-                      
+
                       <div class="card-footer">
                       <button type="submit" class="btn btn-primary">Submit</button>
-                      <button type="button" class="btn btn-danger">Reset</button>
-                      <button type="button" class="btn btn-secondary">Kembali</button>
+                      <a href="/stakeholder"><button type="button" class="btn btn-secondary">Kembali</button></a>
                     </div>
                     
-              </div>
                 </form>
                   </div>
 
@@ -459,5 +425,45 @@
 <script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="assets/dist/js/adminlte.js"></script>
+<script type="text/javascript">
+
+  $(document).ready(function (e) {
+   
+     
+   $('#FOTO_P_LAMA').change(function(){
+            
+    let reader = new FileReader();
+  
+    reader.onload = (e) => { 
+  
+      $('#PREVIEW_P_LAMA').attr('src', e.target.result); 
+    }
+  
+    reader.readAsDataURL(this.files[0]); 
+   
+   });
+   
+  });
+    </script>
+  <script type="text/javascript">
+  
+  $(document).ready(function (e) {
+   
+     
+   $('#FOTO_P_BARU').change(function(){
+            
+    let reader = new FileReader();
+  
+    reader.onload = (e) => { 
+  
+      $('#PREVIEW_P_BARU').attr('src', e.target.result); 
+    }
+  
+    reader.readAsDataURL(this.files[0]); 
+   
+   });
+   
+  });
+    </script>
 </body>
 </html>

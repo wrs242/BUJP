@@ -213,39 +213,33 @@
                         <label>Kawasan</label>
                     </div>
                         <div class="col-sm-2">
-                          <label>: {{$stakeholder->KAWASAN}}</label>
+                          : {{$stakeholder->KAWASAN}} 
                       </div>
-                  </div>
-                  <div class="form-group row">
                       <div class="col-sm-1">
-                      <label>Wilayah</label>
+                        <label>Wilayah</label>
+                        </div>
+                        <div class="col-sm-2">
+                          : {{$stakeholder->WILAYAH}}
                       </div>
-                      <div class="col-sm-2">
-                        <label>: {{$stakeholder->WILAYAH}}</label>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-sm-1">
+                      <div class="col-sm-1">
                         <label>Instansi</label>
                     </div>
                     <div class="col-sm-2">
-                        <label>: {{$stakeholder->INSTANSI}}</label>
+                        : {{$stakeholder->INSTANSI}}
                     </div>
-                  </div>
-                  <div class="form-group row">
                     <div class="col-sm-1">
-                        <label>Wilayah Hukum Instansi</label>
-                    </div>
-                    <div class="col-sm-2">
-                        <label>: {{$stakeholder->WILAYAH_HUKUM}}</label>
-                    </div>
+                      <label>Wilayah Hukum Instansi</label>
                   </div>
+                  <div class="col-sm-2">
+                      : {{$stakeholder->WILAYAH_HUKUM}}
+                  </div>
+                </div>
                   <div class="form-group row">
                     <div class="col-sm-1">
                         <label>Alamat Instansi</label>
                     </div>
                     <div class="col-sm-2">
-                        <label>: {{$stakeholder->ALAMAT_INSTANSI}}</label>
+                        : {{$stakeholder->ALAMAT_INSTANSI}}
                     </div>
                   </div>
                     <table class="table table-borderless">
@@ -297,7 +291,8 @@
                       
                       <div class="card-footer">
                         <a href="../{{$stakeholder->ID_STAKEHOLDER}}/edit-stakeholder"><button type="button" class="btn btn-primary">Edit</button></a>
-                        <a href="../{{$stakeholder->ID_STAKEHOLDER}}/delete-stakeholder"><button type="button" class="btn btn-danger">Delete</button></a>
+                        <a href="../{{$stakeholder->ID_STAKEHOLDER}}/delete-stakeholder"><button type="button" class="btn btn-danger" onclick="return confirm('Yakin akan Dihapus?')">Hapus</button></a>
+                        <a href="/stakeholder"><button type="button" class="btn btn-secondary">Kembali</button></a>
                     </div>
               </div>
                   </div>

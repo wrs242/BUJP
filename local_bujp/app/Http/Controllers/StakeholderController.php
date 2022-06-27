@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stakeholder;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class StakeholderController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $stakeholders = stakeholder::all();
@@ -41,6 +48,8 @@ class StakeholderController extends Controller
        $stakeholder->LOKASI_TUGAS_LAMA_P_BARU = $request->input('LOKASI_TUGAS_LAMA_P_BARU');
        $stakeholder->TAHUN_ANGKATAN_P_BARU = $request->input('TAHUN_ANGKATAN_P_BARU');
        $stakeholder->TELP_P_BARU = $request->input('TELP_P_BARU');
+       $stakeholder->USER_CREATED = auth()->user()->id;
+       $stakeholder->DATE_CREATED = today();
        if($request->hasFile('FOTO_P_LAMA'))
        {
         $file = $request->file('FOTO_P_LAMA');
@@ -129,6 +138,8 @@ class StakeholderController extends Controller
         $stakeholder->LOKASI_TUGAS_LAMA_P_BARU = $request->input('LOKASI_TUGAS_LAMA_P_BARU');
         $stakeholder->TAHUN_ANGKATAN_P_BARU = $request->input('TAHUN_ANGKATAN_P_BARU');
         $stakeholder->TELP_P_BARU = $request->input('TELP_P_BARU');
+        $stakeholder->USER_UPDATED = auth()->user()->id;
+        $stakeholder->DATE_UPDATED = today();
         if($request->hasFile('FOTO_P_LAMA'))
        {
         $file = $request->file('FOTO_P_LAMA');
@@ -148,5 +159,11 @@ class StakeholderController extends Controller
        
        $stakeholder->update();
        return redirect()->intended($id_stakeholder.'/detail-stakeholder');
+    }
+
+    public function destroy($id)
+    {
+        Stakeholder::destroy($id);
+        return redirect('/stakeholder');
     }
 }

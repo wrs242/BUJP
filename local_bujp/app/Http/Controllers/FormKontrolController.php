@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class FormKontrolController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $kontrol = kontrol_bulanan::all();

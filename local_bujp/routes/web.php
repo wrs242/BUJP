@@ -27,7 +27,7 @@ Route::get('/', [HomeController::class, 'index']);
 //Route::post('/login', [LoginController::class, 'authentication']);
 
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [HomeController::class, 'index']);
 
 
 Route::get('/rekrutmen', [RekrutmenController::class, 'index']);
@@ -40,7 +40,7 @@ Route::post('/entry-stakeholder', [StakeholderController::class, 'store']);
 Route::get('/{id}/detail-stakeholder', [StakeholderController::class, 'detail']);
 Route::get('/{id}/edit-stakeholder', [StakeholderController::class, 'edit']);
 Route::post('/store-edit-stakeholder', [StakeholderController::class, 'store_edit']);
-Route::get('/{id}/delete-stakeholder', [StakeholderController::class, 'delete']);
+Route::get('/{id}/delete-stakeholder', [StakeholderController::class, 'destroy']);
 
 Route::get('/bujp', [BujpController::class, 'index']);
 Route::get('/entry-bujp', [BujpController::class, 'entry']);

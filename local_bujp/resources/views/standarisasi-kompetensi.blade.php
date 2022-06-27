@@ -221,6 +221,18 @@
                 <embed type="application/pdf"
                   src="uploads/pedoman/contoh.pdf" height="1275" width="100%"><embed>
               <br>
+              <form action="/entry-stakeholder" method="POST" enctype="multipart/form-data">
+                @csrf
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Upload Standarisasi Kompetensi Terbaru</label>
+                  <input type="file" class="form-control" name="FOTO_P_LAMA">
+                </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+              </form>
                                 </div>
                                   <!-- /.card-footer -->
                   

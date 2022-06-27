@@ -262,12 +262,12 @@
                         <label>Nama</label>
                         <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_LAMA" value="{{$stakeholder->NAMA_P_LAMA}}">
                       </div></td>
-                      <td rowspan="5" class="col-3"><img src="../uploads/stakeholder/pejabat_lama/{{$stakeholder->FOTO_P_LAMA}}" width="100%"></td>
+                      <td rowspan="5" class="col-3"><img id="PREVIEW_P_LAMA" alt="PREVIEW_P_LAMA" src="../uploads/stakeholder/pejabat_lama/{{$stakeholder->FOTO_P_LAMA}}" width="100%"></td>
                       <td class="col-3"><div class="form-group">
-                        <label>Nama</label>
-                        <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_BARU" value="{{$stakeholder->NAMA_P_BARU}}">
+                        <label>Nama <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Nama" name="NAMA_P_BARU" value="{{$stakeholder->NAMA_P_BARU}}" required>
                       </div></td>
-                      <td rowspan="5" class="col-3"><img src="../uploads/stakeholder/pejabat_baru/{{$stakeholder->FOTO_P_BARU}}" width="100%"></td>
+                      <td rowspan="5" class="col-3"><img id="PREVIEW_P_BARU" alt="PREVIEW_P_BARU" src="../uploads/stakeholder/pejabat_baru/{{$stakeholder->FOTO_P_BARU}}" width="100%"></td>
                     </tr>
                     <tr>
                       <td class="col-3"><div class="form-group">
@@ -275,8 +275,8 @@
                         <input type="text" class="form-control" placeholder="Pangkat" name="PANGKAT_P_LAMA" value="{{$stakeholder->PANGKAT_P_LAMA}}">
                       </div></td>
                       <td class="col-3"><div class="form-group">
-                        <label>Pangkat</label>
-                        <input type="text" class="form-control" placeholder="Pangkat" name="PANGKAT_P_BARU" value="{{$stakeholder->PANGKAT_P_BARU}}">
+                        <label>Pangkat <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Pangkat" name="PANGKAT_P_BARU" value="{{$stakeholder->PANGKAT_P_BARU}}" required>
                       </div></td>
                     </tr>
                     <tr>
@@ -297,12 +297,12 @@
                         <label>Periode Jabatan</label>
                         <div class="row">
                         <div class="form-group col-sm-6">
-                          <label>Awal</label>
-                        <input type="date" class="form-control" name="AKHIR_MENJABAT_P_BARU" value="{{$stakeholder->AKHIR_MENJABAT_P_BARU}}">
+                          <label>Awal <span style="color: red">*</span></label>
+                        <input type="date" class="form-control" name="AKHIR_MENJABAT_P_BARU" value="{{$stakeholder->AKHIR_MENJABAT_P_BARU}}" required>
                         </div>
                         <div class="form-group col-sm-6">
-                          <label>Akhir</label>
-                        <input type="date" class="form-control"name="MULAI_MENJABAT_P_BARU" value="{{$stakeholder->MULAI_MENJABAT_P_BARU}}">
+                          <label>Akhir <span style="color: red">*</span></label>
+                        <input type="date" class="form-control"name="MULAI_MENJABAT_P_BARU" value="{{$stakeholder->MULAI_MENJABAT_P_BARU}}" required>
                           </div>
                         </div>
                       </div></td>
@@ -313,8 +313,8 @@
                         <input type="text" class="form-control" placeholder="Jumlah Personel" name="JUMLAH_PERSONEL_P_LAMA" value="{{$stakeholder->JUMLAH_PERSONEL_P_LAMA}}">
                       </div></td>
                       <td class="col-3"><div class="form-group">
-                        <label>Jumlah Personel</label>
-                        <input type="text" class="form-control" placeholder="Jumlah Personel" name="JUMLAH_PERSONEL_P_BARU" value="{{$stakeholder->JUMLAH_PERSONEL_P_BARU}}">
+                        <label>Jumlah Personel <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Jumlah Personel" name="JUMLAH_PERSONEL_P_BARU" value="{{$stakeholder->JUMLAH_PERSONEL_P_BARU}}" required>
                       </div></td>
                     </tr>
                     <tr>
@@ -333,14 +333,14 @@
                         <input type="text" class="form-control" placeholder="Tahun Angkatan" name="TAHUN_ANGKATAN_P_LAMA" value="{{$stakeholder->TAHUN_ANGKATAN_P_LAMA}}">
                       </div></td>
                       <td class="col-3">
-                        <input type="file"  placeholder="Upload Foto" name="FOTO_P_LAMA">
+                        <input type="file"  placeholder="Upload Foto" id="FOTO_P_LAMA" name="FOTO_P_LAMA">
                       </td>
                       <td class="col-3"><div class="form-group">
-                        <label>Tahun Angkatan</label>
-                        <input type="text" class="form-control" placeholder="Tahun Angkatan" name="TAHUN_ANGKATAN_P_BARU" value="{{$stakeholder->TAHUN_ANGKATAN_P_BARU}}">
+                        <label>Tahun Angkatan <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="Tahun Angkatan" name="TAHUN_ANGKATAN_P_BARU" value="{{$stakeholder->TAHUN_ANGKATAN_P_BARU}}" required>
                       </div></td>
                       <td class="col-3">
-                        <input type="file"  placeholder="Upload Foto" name="FOTO_P_BARU`">
+                        <input type="file"  placeholder="Upload Foto" id="FOTO_P_BARU" name="FOTO_P_BARU">
                       </td>
                     </tr>
                     <tr>
@@ -350,8 +350,8 @@
                       </div></td>
                       <td class="col-3"></td>
                       <td class="col-3"><div class="form-group">
-                        <label>No. Telp</label>
-                        <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_BARU" value="{{$stakeholder->TELP_P_BARU}}">
+                        <label>No. Telp <span style="color: red">*</span></label>
+                        <input type="text" class="form-control" placeholder="No. Telp" name="TELP_P_BARU" value="{{$stakeholder->TELP_P_BARU}}" required>
                       </div></td>
                     </tr>
                     </table>
@@ -422,5 +422,45 @@
 <script src="../assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../assets/dist/js/adminlte.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function (e) {
+ 
+   
+ $('#FOTO_P_LAMA').change(function(){
+          
+  let reader = new FileReader();
+
+  reader.onload = (e) => { 
+
+    $('#PREVIEW_P_LAMA').attr('src', e.target.result); 
+  }
+
+  reader.readAsDataURL(this.files[0]); 
+ 
+ });
+ 
+});
+  </script>
+<script type="text/javascript">
+
+$(document).ready(function (e) {
+ 
+   
+ $('#FOTO_P_BARU').change(function(){
+          
+  let reader = new FileReader();
+
+  reader.onload = (e) => { 
+
+    $('#PREVIEW_P_BARU').attr('src', e.target.result); 
+  }
+
+  reader.readAsDataURL(this.files[0]); 
+ 
+ });
+ 
+});
+  </script>
 </body>
 </html>

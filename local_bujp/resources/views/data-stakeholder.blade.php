@@ -224,8 +224,8 @@
                       <th>Wilayah</th>
                       <th>Instansi</th>
                       <th>Wilayah Hukum</th>
-                      <th>Alamat Instansi</th>
                       <th>Pejabat Saat Ini</th>
+                      <th>Dibuat Oleh</th>
                       <th>Opsi</th>
                     </tr>
                   </thead>
@@ -238,8 +238,8 @@
                       <td>{{$stakeholder->WILAYAH}}</td>
                       <td>{{$stakeholder->INSTANSI}}</td>
                       <td>{{$stakeholder->WILAYAH_HUKUM}}</td>
-                      <td>{{$stakeholder->ALAMAT_INSTANSI}}</td>
                       <td>{{$stakeholder->NAMA_P_BARU}}</td>
+                      <td>{{$stakeholder->USER_CREATED}}</td>
                       <td>
                         <a href="{{$stakeholder->ID_STAKEHOLDER}}/detail-stakeholder"><button class="btn btn-block btn-secondary">Detail</button></a>
                       </td>
