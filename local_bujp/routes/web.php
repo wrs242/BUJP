@@ -58,13 +58,6 @@ Route::get('/penilaian-tahunan', [PenilaianTahunanController::class, 'index']);
 Route::get('/tambah-penilaian-tahunan', [PenilaianTahunanController::class, 'entry']);
 Route::post('/tambah-penilaian-tahunan', [PenilaianTahunanController::class, 'store']);
 
-
-
-Route::get('/boq', function () {
-    return view('data-boq');
-});
-
-
 Route::get('/standarisasi-kompetensi', function () {
     return view('standarisasi-kompetensi');
 });

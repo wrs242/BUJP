@@ -324,7 +324,7 @@
                       </div></td>
                       <td class="col-3"><div class="form-group">
                         <label>Lokasi Tugas Lama</label>
-                        <input type="text" class="form-control" placeholder="Lokasi Tugas Lama" name="LOKASI_TUGAS_LAMA_P_BARU" value="{{$stakeholder->lOKASU_TUGAS_LAMA_P_BARU}}">
+                        <input type="text" class="form-control" placeholder="Lokasi Tugas Lama" name="LOKASI_TUGAS_LAMA_P_BARU" value="{{$stakeholder->LOKASI_TUGAS_LAMA_P_BARU}}">
                       </div></td>
                     </tr>
                     <tr>
