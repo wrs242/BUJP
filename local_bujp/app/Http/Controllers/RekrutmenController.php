@@ -79,7 +79,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_KANTOR');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/foto_kantor',$filename);
          $rekrutmen->FOTO_KANTOR = $filename;
         }
         if($request->hasFile('FOTO_AKTA'))
@@ -87,7 +87,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_AKTA');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/foto_akta',$filename);
          $rekrutmen->FOTO_AKTA = $filename;
         }
         if($request->hasFile('FOTO_SIO'))
@@ -95,7 +95,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_SIO');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/foto_sio',$filename);
          $rekrutmen->FOTO_SIO = $filename;
         }
         if($request->hasFile('FOTO_BPJS_KETENAGA_KERJAAN'))
@@ -103,7 +103,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_BPJS_KETENAGA_KERJAAN');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/bpjs_ketenagakerjaan',$filename);
          $rekrutmen->FOTO_BPJS_KETENAGA_KERJAAN = $filename;
         }
         if($request->hasFile('FOTO_BPJS_KESEHATAN'))
@@ -111,7 +111,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_BPJS_KESEHATAN');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/bpjs_kesehatan',$filename);
          $rekrutmen->FOTO_BPJS_KESEHATAN = $filename;
         }
         if($request->hasFile('FOTO_REKENING_KORAN'))
@@ -119,7 +119,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_REKENING_KORAN');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/rekening_koran',$filename);
          $rekrutmen->FOTO_REKENING_KORAN = $filename;
         }
         if($request->hasFile('FOTO_PEJABAT_TNI'))
@@ -127,7 +127,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_PEJABAT_TNI');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/pejabat_tni',$filename);
          $rekrutmen->FOTO_PEJABAT_TNI = $filename;
         }
         if($request->hasFile('FOTO_PEJABAT_POLRI'))
@@ -135,7 +135,7 @@ class RekrutmenController extends Controller
          $file = $request->file('FOTO_PEJABAT_POLRI');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/pejabat_polri',$filename);
          $rekrutmen->FOTO_PEJABAT_POLRI = $filename;
         }
         
@@ -144,7 +144,7 @@ class RekrutmenController extends Controller
          $file = $request->file('SPT_PERUSAHAAN');
          $extention = $file->getClientOriginalExtension();
          $filename = time().'.'.$extention;
-         $file->move('uploads/rekrutmen/',$filename);
+         $file->move('uploads/rekrutmen/spt_perusahaan',$filename);
          $rekrutmen->SPT_PERUSAHAAN = $filename;
         }
         $rekrutmen->save();
@@ -152,5 +152,12 @@ class RekrutmenController extends Controller
         
         return redirect()->intended('/rekrutmen');
 
+    }
+
+    public function detail(Request $request)
+    {
+        $id_bujp = $request->id;
+        $bujp = bujp::where('ID_BUJP',$id_bujp)->first();
+        return view('/detail-rekrutmen',compact('bujp'));
     }
 }

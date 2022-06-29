@@ -33,6 +33,7 @@ Route::get('/dashboard', [HomeController::class, 'index']);
 Route::get('/rekrutmen', [RekrutmenController::class, 'index']);
 Route::get('/entry-rekrutmen', [RekrutmenController::class, 'entry']);
 Route::post('/entry-rekrutmen', [RekrutmenController::class, 'store']);
+Route::get('/{id}/detail-rekrutmen', [RekrutmenController::class, 'detail']);
 
 Route::get('/stakeholder', [StakeholderController::class, 'index']);
 Route::get('/entry-stakeholder', [StakeholderController::class, 'entry']);

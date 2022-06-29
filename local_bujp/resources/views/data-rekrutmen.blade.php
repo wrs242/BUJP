@@ -225,6 +225,7 @@
                       <th>Undangan Presentasi</th>
                       <th>tanggal Presentasi</th>
                       <th>Hasil Seleksi</th>
+                      <th>Opsi</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -239,6 +240,9 @@
                       <td>{{$rekrutmen->UNDANGAN_PRESENTASI}}</td>
                       <td>{{$rekrutmen->TGL_PRESENTASI}}</td>
                       <td>{{$rekrutmen->HASIL_SELEKSI}}</td>
+                      <td>
+                        <a href="{{$rekrutmen->ID_BUJP}}/detail-rekrutmen"><button class="btn btn-block btn-secondary">Detail</button></a>
+                      </td>
                   </tr>
                   @endforeach
                 </table>

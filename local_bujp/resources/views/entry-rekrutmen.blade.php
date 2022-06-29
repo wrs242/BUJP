@@ -296,7 +296,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label for="FOTO_KANTOR" class="form-label">Upload Foto Kantor <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_KANTOR" class="form-control" id="FOTO_KANTOR" required>
+                        <input type="file" name="FOTO_KANTOR" id="FOTO_KANTOR" class="form-control-file" required>
                       </div>
                     </div>
                   </div>
@@ -338,7 +338,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Upload Foto Akta <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_AKTA" class="form-control" required>
+                        <input type="file" name="FOTO_AKTA" class="form-control-file" required>
                       </div>
                     </div>
                   </div>
@@ -364,7 +364,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Upload Foto SIO <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_SIO" class="form-control" required>
+                        <input type="file" name="FOTO_SIO" class="form-control-file" required>
                       </div>
                     </div>
                   </div>
@@ -393,7 +393,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Upload Foto BPJS Ketenaga Kerjaan </label>
-                        <input type="file" name="FOTO_BPJS_KETENAGA_KERJAAN" class="form-control">
+                        <input type="file" name="FOTO_BPJS_KETENAGA_KERJAAN" class="form-control-file" >
                       </div>
                     </div>
                   </div>
@@ -423,7 +423,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Upload Foto BPJS Kesehatan </label>
-                        <input type="file" name="FOTO_BPJS_KESEHATAN" class="form-control">
+                        <input type="file" name="FOTO_BPJS_KESEHATAN" class="form-control-file" >
                       </div>
                     </div>
                   </div>
@@ -437,7 +437,7 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>Upload Rekening Koran <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_REKENING_KORAN" class="form-control" required>
+                        <input type="file" name="FOTO_REKENING_KORAN" class="form-control-file"  required>
                       </div>
                     </div>
                   </div>
@@ -553,7 +553,7 @@
                       <div class="col-sm-3">
                         <div class="form-group">
                           <label>Upload foto Pejabat</label>
-                          <input type="file" name="FOTO_PEJABAT_TNI" class="form-control">
+                          <input type="file" name="FOTO_PEJABAT_TNI" class="form-control-file" >
                         </div>
                     </div>
                   </div>
@@ -591,9 +591,9 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Upload foto Pejabat</label>
-                        <input type="file" name="FOTO_PEJABAT_POLRI" class="form-control">
+                        <input type="file" name="FOTO_PEJABAT_POLRI" class="form-control-file" >
                       </div>
-                  </div>
+                  </div>  
                   </div>
 
                   <div class="row">
@@ -605,7 +605,7 @@
                     <div class="col-sm-4">
                       <div class="form-group">
                         <label>Bukti Lapor SPT Perusahaan <span style="color: red">*</span></label>
-                        <input type="file" name="SPT_PERUSAHAAN" class="form-control" required>
+                        <input type="file" name="SPT_PERUSAHAAN" class="form-control-file" required>
                       </div>
                     </div>
                   </div>
@@ -624,17 +624,6 @@
                         <option></option>
                           <option>Lulus</option>
                           <option>Tidak Lulus</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="form-group">
-                      <h4><strong>Status</strong> <span style="color: red">*</span></h5>
-                      <select class="form-control" name="STATUS" required>
-                        <option></option>
-                          <option>Kerjasama</option>
-                          <option>Blacklist</option>
-                          <option>Belum Kerjasama</option>
                         </select>
                       </div>
                     </div>
