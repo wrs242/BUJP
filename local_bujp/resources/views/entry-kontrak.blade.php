@@ -409,38 +409,6 @@ $(function () {
   })
 </script>
 <script type="text/javascript">
-$(document).ready(function(){
-
-  $(document).on('change','.nama-bujp',function () {
-			var idbujp=$(this).val();
-
-			var a=$(this).parent();
-			console.log(idbujp);
-			var op="";
-			$.ajax({
-				type:'get',
-				url:'{!!URL::to('findtelpkantor')!!}',
-				data:{'id':idbujp},
-				dataType:'json',//return data will be json
-				success:function(data){
-					//console.log("price");
-					//console.log(data.price);
-
-					// here price is coloumn name in products table data.coln name
-
-					a.find('.telp-kantor').val(TELP_KANTOR);
-
-				},
-				error:function(){
-
-				}
-			});
-
-
-		});
-
-
-});
 
 </script>
 </body>

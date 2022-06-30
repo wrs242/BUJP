@@ -8,23 +8,23 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <link rel="stylesheet" href="../assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="assets/plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="../assets/plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../assets/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <link rel="stylesheet" href="../assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="../assets/plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
-  <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="../assets/plugins/summernote/summernote-bs4.min.css">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -32,7 +32,7 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="assets/dist/img/Logo Summarecon.png" alt="SummareconLogo" height="60" width="154">
+    <img class="animation__shake" src="../assets/dist/img/Logo Summarecon.png" alt="SummareconLogo" height="60" width="154">
   </div>
 
   <!-- Navbar -->
@@ -55,7 +55,7 @@
     <!-- Brand Logo -->
     <div class="image">
     <a href="{{ url('dashboard') }}" class="brand-link">
-      <img src="assets/dist/img/Logo Summarecon.png" alt="Summarecon Logo" class="brand-link" width="50%" style="opacity: .8">
+      <img src="../assets/dist/img/Logo Summarecon.png" alt="Summarecon Logo" class="brand-link" width="50%" style="opacity: .8">
       
     </a>
     </div>
@@ -64,7 +64,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -203,37 +203,38 @@
     <!-- Main content -->
     <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Menambahkan Rekrutmen</h3>
+                <h3 class="card-title">Edit Rekrutmen</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <h6>Isian yang bertanda (<span style="color: red">*</span>) wajib diisi</h6>
-                <form method="POST" action="entry-rekrutmen" enctype="multipart/form-data">
+                <form method="POST" action="/store-edit-rekrutmen" enctype="multipart/form-data">
                   @csrf
+                  <input type="text" name="ID_BUJP" value="{{$bujp->ID_BUJP}}" hidden>
                   <div class="row">
                     <div class="col-sm-3">
                       <!-- text input -->
                       <div class="form-group">
                         <label>Nama Perusahaan <span style="color: red">*</span></label>
-                        <input type="text" class="form-control" name="NAMA_BUJP" placeholder="Nama Perusahaan" required>
+                        <input type="text" class="form-control" name="NAMA_BUJP" placeholder="Nama Perusahaan" value="{{$bujp->NAMA_BUJP}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>No. Telp <span style="color: red">*</span></label>
-                        <input type="text" class="form-control" name="TELP_KANTOR" placeholder="No. Telp" required>
+                        <input type="text" class="form-control" name="TELP_KANTOR" placeholder="No. Telp" value="{{$bujp->TELP_KANTOR}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Tanggal Terima Company Profile <span style="color: red">*</span></label>
-                        <input type="date" name="TGL_TERIMA_COMPANY_PROFILE" class="form-control" required>
+                        <input type="date" name="TGL_TERIMA_COMPANY_PROFILE" class="form-control" value="{{$bujp->TGL_TERIMA_COMPANY_PROFILE}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Alamat <span style="color: red">*</span></label>
-                        <textarea class="form-control" rows="2" name="ALAMAT" placeholder="Alamat" required></textarea>
+                        <textarea class="form-control" rows="2" name="ALAMAT" placeholder="Alamat" required>{{$bujp->ALAMAT}}</textarea>
                       </div>
                     </div>
                     
@@ -244,7 +245,7 @@
                     <div class="form-group">
                         <label>Undangan Presentasi <span style="color: red">*</span></label>
                         <select class="form-control" name="UNDANGAN_PRESENTASI" required>
-                        <option></option>
+                        <option>{{$bujp->UNDANGAN_PRESENTASI}}</option>
                           <option>Ya</option>
                           <option >Tidak</option>
                         </select>
@@ -254,13 +255,13 @@
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Tanggal Presentasi</label>
-                        <input type="date" name="TGL_PRESENTASI" class="form-control">
+                        <input type="date" name="TGL_PRESENTASI" class="form-control" value="{{$bujp->TGL_PRESENTASI}}">
                       </div>
                     </div>
                     <div class="col-sm-5">
                       <div class="form-group">
                         <label>Alasan Tidak diundang</label>
-                        <input type="text" name="ALASAN_TIDAK_DIUNDANG" class="form-control" placeholder="Alasan">
+                        <input type="text" name="ALASAN_TIDAK_DIUNDANG" class="form-control" placeholder="Alasan" value="{{$bujp->ALASAN_TIDAK_DIUNDANG}}">
                       </div>
                     </div>
                     
@@ -281,7 +282,7 @@
                       <div class="form-group">
                         <label>Milik Sendiri <span style="color: red">*</span></label>
                         <select class="form-control" name="KEPEMILIKAN_KANTOR" required>
-                        <option></option>
+                        <option>{{$bujp->KEPEMILIKAN_KANTOR}}</option>
                           <option>Ya</option>
                           <option>Sewa</option>
                         </select>
@@ -290,13 +291,13 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Periode Sewa</label>
-                        <input type="date" name="PERIODE_SEWA" class="form-control">
+                        <input type="date" name="PERIODE_SEWA" class="form-control" value="{{$bujp->PERIODE_SEWA}}">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label for="FOTO_KANTOR" class="form-label">Upload Foto Kantor <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_KANTOR" id="FOTO_KANTOR" class="form-control-file" required>
+                        <label for="FOTO_KANTOR" class="form-label">Upload Foto Kantor</label>
+                        <input type="file" name="FOTO_KANTOR" id="FOTO_KANTOR" class="form-control-file">
                       </div>
                     </div>
                   </div>
@@ -311,7 +312,7 @@
                       <div class="form-group">
                         <label>Akta Pendirian Perusahaan <span style="color: red">*</span></label>
                         <select name="AKTA_PENDIRIAN_PERUSAHAAN" class="form-control" required>
-                        <option></option>
+                        <option>{{$bujp->AKTA_PENDIRIAN_PERUSAHAAN}}</option>
                           <option>Ya</option>
                           <option>Tidak</option>
                         </select>
@@ -320,25 +321,25 @@
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Tanggal Pendirian Perusahaan <span style="color: red">*</span></label>
-                        <input type="date" name="TGL_PENDIRIAN" class="form-control" required>
+                        <input type="date" name="TGL_PENDIRIAN" class="form-control" value="{{$bujp->TGL_PENDIRIAN}}" required>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Tanggal Akta Perubahan <span style="color: red">*</span></label>
-                        <input type="date" name="AKTA_PERUBAHAN" class="form-control" required>
+                        <input type="date" name="AKTA_PERUBAHAN" class="form-control" value="{{$bujp->AKTA_PERUBAHAN}}" required>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>No. Notaris <span style="color: red">*</span></label>
-                        <input type="text" name="NO_NOTARIS" class="form-control" placeholder="No. Notaris" required>
+                        <input type="text" name="NO_NOTARIS" class="form-control" placeholder="No. Notaris" value="{{$bujp->NO_NOTARIS}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto Akta <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_AKTA" class="form-control-file" required>
+                        <label>Upload Foto Akta </label>
+                        <input type="file" name="FOTO_AKTA" class="form-control-file">
                       </div>
                     </div>
                   </div>
@@ -352,19 +353,19 @@
                   <div class="col-sm-3">
                       <div class="form-group">
                         <label>Nomor SIO <span style="color: red">*</span></label>
-                        <input type="text" name="NO_SIO" class="form-control" placeholder="no. SIO" required>
+                        <input type="text" name="NO_SIO" class="form-control" placeholder="no. SIO" value="{{$bujp->NO_SIO}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Masa Berlaku <span style="color: red">*</span></label>
-                        <input type="date" name="MASA_BERLAKU_SIO" class="form-control" required>
+                        <input type="date" name="MASA_BERLAKU_SIO" class="form-control" value="{{$bujp->MASA_BERLAKU_SIO}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto SIO <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_SIO" class="form-control-file" required>
+                        <label>Upload Foto SIO</label>
+                        <input type="file" name="FOTO_SIO" class="form-control-file">
                       </div>
                     </div>
                   </div>
@@ -378,7 +379,7 @@
                       <div class="form-group">
                         <label>Status BPJS Ketenaga Kerjaan <span style="color: red">*</span></label>
                         <select class="form-control" name="STATUS_BPJS_KETENAGA_KERJAAN" required>
-                        <option></option>
+                        <option>{{$bujp->STATUS_BPJS_KETENAGA_KERJAAN}}</option>
                           <option>Terdaftar</option>
                           <option>Tidak Terdaftar</option>
                         </select>
@@ -387,7 +388,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>No. Sertifikat</label>
-                        <input type="text" class="form-control" name="NO_BPJS_KETENAGA_KERJAAN" placeholder="No. Sertifikat">
+                        <input type="text" class="form-control" name="NO_BPJS_KETENAGA_KERJAAN" placeholder="No. Sertifikat" value="{{$bujp->NO_BPJS_KETENAGA_KERJAAN}}">
                       </div>
                     </div>
                     <div class="col-sm-3">
@@ -408,7 +409,7 @@
                       <div class="form-group">
                         <label>Status BPJS Kesehatan <span style="color: red">*</span></label>
                         <select class="form-control" name="STATUS_BPJS_KESEHATAN" required>
-                        <option></option>
+                        <option>{{$bujp->STATUS_BPJS_KESEHATAN}}</option>
                           <option>Terdaftar</option>
                           <option>Tidak Terdaftar</option>
                         </select>
@@ -417,7 +418,7 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>No. Sertifikat</label>
-                        <input type="text" name="NO_BPJS_KESEHATAN" class="form-control" placeholder="No. Sertifikat" >
+                        <input type="text" name="NO_BPJS_KESEHATAN" class="form-control" placeholder="No. Sertifikat" value="{{$bujp->NO_BPJS_KESEHATAN}}">
                       </div>
                     </div>
                     <div class="col-sm-3">
@@ -436,8 +437,8 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>Upload Rekening Koran <span style="color: red">*</span></label>
-                        <input type="file" name="FOTO_REKENING_KORAN" class="form-control-file"  required>
+                        <label>Upload Rekening Koran</label>
+                        <input type="file" name="FOTO_REKENING_KORAN" class="form-control-file">
                       </div>
                     </div>
                   </div>
@@ -451,14 +452,14 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Mobil Patroli <span style="color: red">*</span></label>
-                        <input type="number" name="MOBIL_PATROLI" class="form-control" min="0" required>
+                        <input type="number" name="MOBIL_PATROLI" class="form-control" min="0" value="{{$bujp->MOBIL_PATROLI}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Kepemilikan Mobil <span style="color: red">*</span></label>
                         <select class="form-control" name="KEPEMILIKAN_MOBIL" required>
-                        <option></option>
+                        <option>{{$bujp->KEPEMILIKAN_MOBIL}}</option>
                           <option>Milik Pribadi</option>
                           <option>Sewa</option>
                         </select>
@@ -467,14 +468,14 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Motor Patroli <span style="color: red">*</span></label>
-                        <input type="number" name="MOTOR_PATROLI" class="form-control" min="0" required>
+                        <input type="number" name="MOTOR_PATROLI" class="form-control" min="0" value="{{$bujp->MOTOR_PATROLI}}" required>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Kepemilikan Motor <span style="color: red">*</span></label>
                         <select name="KEPEMILIKAN_MOTOR" class="form-control" required>
-                        <option></option>
+                        <option>{{$bujp->KEPEMILIKAN_MOTOR}}</option>
                           <option>Milik Pribadi</option>
                           <option>Sewa</option>
                         </select>
@@ -491,31 +492,31 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Mall</label>
-                        <input type="text" name="PORTO_MALL" placeholder="Mall A, Mall B, Mall C" class="form-control">
+                        <input type="text" name="PORTO_MALL" placeholder="Mall A, Mall B, Mall C" class="form-control" value="{{$bujp->PORTO_MALL}}">
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Cluster</label>
-                        <input type="text" name="PORTO_CLUSTER" placeholder="Cluster A, Cluster B, Cluster C"class="form-control">
+                        <input type="text" name="PORTO_CLUSTER" placeholder="Cluster A, Cluster B, Cluster C" class="form-control" value="{{$bujp->PORTO_CLUSTER}}">
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Apartemen</label>
-                        <input type="text" name="PORTO_APARTEMEN" placeholder="Apartemen A, Apartemen B, Apartemen C"class="form-control">
+                        <input type="text" name="PORTO_APARTEMEN" placeholder="Apartemen A, Apartemen B, Apartemen C" class="form-control" value="{{$bujp->PORTO_APARTEMEN}}">
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Perkantoran</label>
-                        <input type="text" name="PORTO_PERKANTORAN" placeholder="Kantor A, Kantor B, Kantor C"class="form-control">
+                        <input type="text" name="PORTO_PERKANTORAN" placeholder="Kantor A, Kantor B, Kantor C" Class="form-control" value="{{$bujp->PORTO_PERKANTORAN}}">
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Kawasan</label>
-                        <input type="text" name="PORTO_KAWASAN" placeholder="Kawasan A, Kawasan B, Kawasan C"class="form-control">
+                        <input type="text" name="PORTO_KAWASAN" placeholder="Kawasan A, Kawasan B, Kawasan C" Class="form-control" value="{{$bujp->PORTO_KAWASAN}}">
                       </div>
                     </div>
                   </div>
@@ -529,25 +530,25 @@
                     <div class="col-sm-3">
                         <div class="form-group">
                           <label>Nama Pejabat</label>
-                          <input type="text" name="NAMA_PEJABAT_TNI" placeholder="Nama Pejabat" class="form-control">
+                          <input type="text" name="NAMA_PEJABAT_TNI" placeholder="Nama Pejabat" class="form-control" value="{{$bujp->NAMA_PEJABAT_TNI}}">
                         </div>
                       </div>
                       <div class="col-sm-2">
                         <div class="form-group">
                           <label>Pangkat</label>
-                          <input type="text" name="PANGKAT_PEJABAT_TNI" placeholder="Pangkat" class="form-control">
+                          <input type="text" name="PANGKAT_PEJABAT_TNI" placeholder="Pangkat" class="form-control" value="{{$bujp->NAMA_PEJABAT_TNI}}">
                         </div>
                       </div>
                       <div class="col-sm-2">
                         <div class="form-group">
                           <label>Jabatan</label>
-                          <input type="text" name="JABATAN_PEJABAT_TNI" placeholder="Jabatan" class="form-control">
+                          <input type="text" name="JABATAN_PEJABAT_TNI" placeholder="Jabatan" class="form-control" value="{{$bujp->JABATAN_PEJABAT_TNI}}">
                         </div>
                       </div>
                       <div class="col-sm-2">
                         <div class="form-group">
                           <label>Status Relasi</label>
-                          <input type="text" name="RELASI_PEJABAT_TNI" placeholder="Status Relasi" class="form-control">
+                          <input type="text" name="RELASI_PEJABAT_TNI" placeholder="Status Relasi" class="form-control" value="{{$bujp->RELASI_PEJABAT_TNI}}">
                         </div>
                       </div>
                       <div class="col-sm-3">
@@ -567,25 +568,25 @@
                     <div class="col-sm-3">
                       <div class="form-group">
                         <label>Nama Pejabat</label>
-                        <input type="text" name="NAMA_PEJABAT_POLRI" placeholder="Nama Pejabat" class="form-control">
+                        <input type="text" name="NAMA_PEJABAT_POLRI" placeholder="Nama Pejabat" class="form-control" value="{{$bujp->NAMA_PEJABAT_POLRI}}">
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Pangkat</label>
-                        <input type="text" name="PANGKAT_PEJABAT_POLRI" placeholder="Pangkat" class="form-control">
+                        <input type="text" name="PANGKAT_PEJABAT_POLRI" placeholder="Pangkat" class="form-control" value="{{$bujp->PANGKAT_PEJABAT_POLRI}}">
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Jabatan</label>
-                        <input type="text" name="JABATAN_PEJABAT_POLRI" placeholder="Jabatan" class="form-control">
+                        <input type="text" name="JABATAN_PEJABAT_POLRI" placeholder="Jabatan" class="form-control" value="{{$bujp->JABATAN_PEJABAT_POLRI}}">
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
                         <label>Status Relasi</label>
-                        <input type="text" name="RELASI_PEJABAT_POLRI" placeholder="Status Relasi" class="form-control">
+                        <input type="text" name="RELASI_PEJABAT_POLRI" placeholder="Status Relasi" class="form-control" value="{{$bujp->RELASI_PEJABAT_POLRI}}">
                       </div>
                     </div>
                     <div class="col-sm-3">
@@ -604,8 +605,8 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Bukti Lapor SPT Perusahaan <span style="color: red">*</span></label>
-                        <input type="file" name="SPT_PERUSAHAAN" class="form-control-file" required>
+                        <label>Bukti Lapor SPT Perusahaan</label>
+                        <input type="file" name="SPT_PERUSAHAAN" class="form-control-file">
                       </div>
                     </div>
                   </div>
@@ -621,7 +622,7 @@
                       <div class="form-group">
                       <h4><strong>Hasil Seleksi Awal</strong> <span style="color: red">*</span></h5>
                       <select class="form-control" name="HASIL_SELEKSI" required>
-                        <option></option>
+                        <option>{{$bujp->HASIL_SELEKSI}}</option>
                           <option>Lulus</option>
                           <option>Tidak Lulus</option>
                         </select>
@@ -630,7 +631,6 @@
                   </div>
                   <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Simpan</button>
-                  <button type="button" class="btn btn-danger">Reset</button>
                   <button type="button" class="btn btn-secondary">Kembali</button>
                 </div>
                 </form>
@@ -657,34 +657,34 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="../assets/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="../assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
-<script src="assets/plugins/chart.js/Chart.min.js"></script>
+<script src="../assets/plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->
-<script src="assets/plugins/sparklines/sparkline.js"></script>
+<script src="../assets/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="../assets/plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="../assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
-<script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="../assets/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
-<script src="assets/plugins/moment/moment.min.js"></script>
-<script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="../assets/plugins/moment/moment.min.js"></script>
+<script src="../assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="../assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 <!-- Summernote -->
-<script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="../assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- overlayScrollbars -->
-<script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="../assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
-<script src="assets/dist/js/adminlte.js"></script>
+<script src="../assets/dist/js/adminlte.js"></script>
 </body>
 </html>

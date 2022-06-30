@@ -10,6 +10,7 @@ use App\Http\Controllers\RekrutmenController;
 use App\Http\Controllers\StakeholderController;
 use App\Http\Controllers\BujpController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,9 @@ Route::get('/rekrutmen', [RekrutmenController::class, 'index']);
 Route::get('/entry-rekrutmen', [RekrutmenController::class, 'entry']);
 Route::post('/entry-rekrutmen', [RekrutmenController::class, 'store']);
 Route::get('/{id}/detail-rekrutmen', [RekrutmenController::class, 'detail']);
+Route::get('/{id}/edit-rekrutmen', [RekrutmenController::class, 'edit']);
+Route::post('/store-edit-rekrutmen', [RekrutmenController::class, 'store_edit']);
+Route::get('/{id}/delete-rekrutmen', [RekrutmenController::class, 'destroy']);
 
 Route::get('/stakeholder', [StakeholderController::class, 'index']);
 Route::get('/entry-stakeholder', [StakeholderController::class, 'entry']);
@@ -59,9 +63,9 @@ Route::get('/penilaian-tahunan', [PenilaianTahunanController::class, 'index']);
 Route::get('/tambah-penilaian-tahunan', [PenilaianTahunanController::class, 'entry']);
 Route::post('/tambah-penilaian-tahunan', [PenilaianTahunanController::class, 'store']);
 
-Route::get('/standarisasi-kompetensi', function () {
-    return view('standarisasi-kompetensi');
-});
+Route::post('/entry-standarisasi-kompetensi', [UploadController::class, 'store']);
+Route::get('/standarisasi-kompetensi', [UploadController::class, 'index']);
+
 
 Route::get('/standarisasi-promosi', function () {
     return view('standarisasi-promosi');

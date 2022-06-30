@@ -239,7 +239,7 @@
                       <td>{{$stakeholder->INSTANSI}}</td>
                       <td>{{$stakeholder->WILAYAH_HUKUM}}</td>
                       <td>{{$stakeholder->NAMA_P_BARU}}</td>
-                      <td>{{$stakeholder->USER_CREATED}}</td>
+                      <td>{{$stakeholder->user_created->name}}</td>
                       <td>
                         <a href="{{$stakeholder->ID_STAKEHOLDER}}/detail-stakeholder"><button class="btn btn-block btn-secondary">Detail</button></a>
                       </td>

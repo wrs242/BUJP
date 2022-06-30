@@ -17,4 +17,13 @@ class bujp extends Model
     {
       return $this->belongsTo('App\Models\Unit', 'ID_UNIT');
     }
+
+    public function user_created()
+    {
+        return $this->belongsTo('App\Models\User', 'USER_CREATED');
+    }
+    public function user_modified()
+    {
+        return $this->belongsTo('App\Models\User', 'USER_MODIFIED');
+    }
 }

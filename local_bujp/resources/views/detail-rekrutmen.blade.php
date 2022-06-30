@@ -201,36 +201,35 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="card card-warning bg-black">
+    <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Menambahkan Rekrutmen</h3>
+                <h3 class="card-title">Detail Rekrutmen</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <h6>Isian yang bertanda (<span style="color: red">*</span>) wajib diisi</h6>
                   <div class="row">
                     <div class="col-sm-3">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Nama Perusahaan <span style="color: red">*</span></label>
+                        <label>Nama Perusahaan  </label>
                         <div>{{$bujp->NAMA_BUJP}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>No. Telp <span style="color: red">*</span></label>
+                        <label>No. Telp  </label>
                         <div>{{$bujp->TELP_KANTOR}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Tanggal Terima Company Profile <span style="color: red">*</span></label>
+                        <label>Tanggal Terima Company Profile  </label>
                         <div>{{$bujp->TGL_TERIMA_COMPANY_PROFILE}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Alamat <span style="color: red">*</span></label>
+                        <label>Alamat  </label>
                         <div>{{$bujp->ALAMAT}}</div>
                       </div>
                     </div>
@@ -240,7 +239,7 @@
                   <div class="row">
                     <div class="col-sm-2">
                     <div class="form-group">
-                        <label>Undangan Presentasi <span style="color: red">*</span></label>
+                        <label>Undangan Presentasi  </label>
                         <div>{{$bujp->UNDANGAN_PRESENTASI}}</div>
                       </div>
                     </div>
@@ -260,7 +259,7 @@
                     
                   </div>
 
-                  <div class="row" >black
+                  <div class="row" >
                   <div class="col-sm-3">
                     <h4><strong>Company Clearance</strong></h4>
                   </div>
@@ -273,7 +272,7 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Milik Sendiri <span style="color: red">*</span></label>
+                        <label>Milik Sendiri  </label>
                         <div>{{$bujp->KEPEMILIKAN_KANTOR}}</div>
                       </div>
                     </div>
@@ -285,7 +284,7 @@
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label for="FOTO_KANTOR" class="form-label">Upload Foto Kantor <span style="color: red">*</span></label>
+                        <label for="FOTO_KANTOR" class="form-label">Foto Kantor  </label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/foto_kantor/{{$bujp->FOTO_KANTOR}}" width="100%"></div>
                       </div>
                     </div>
@@ -299,31 +298,31 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Akta Pendirian Perusahaan <span style="color: red">*</span></label>
+                        <label>Akta Pendirian Perusahaan  </label>
                         <div>{{$bujp->AKTA_PENDIRIAN_PERUSAHAAN}}</div>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Tanggal Pendirian Perusahaan <span style="color: red">*</span></label>
+                        <label>Tanggal Pendirian Perusahaan  </label>
                         <div>{{$bujp->TGL_PENDIRIAN}}</div>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>Tanggal Akta Perubahan <span style="color: red">*</span></label>
+                        <label>Tanggal Akta Perubahan  </label>
                         <div>{{$bujp->AKTA_PERUBAHAN}}</div>
                       </div>
                     </div>
                     <div class="col-sm-2">
                       <div class="form-group">
-                        <label>No. Notaris <span style="color: red">*</span></label>
+                        <label>No. Notaris  </label>
                         <div>{{$bujp->NO_NOTARIS}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto Akta <span style="color: red">*</span></label>
+                        <label>Foto Akta  </label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/foto_akta/{{$bujp->FOTO_AKTA}}" width="100%"></div>
                       </div>
                     </div>
@@ -337,19 +336,19 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Nomor SIO <span style="color: red">*</span></label>
+                        <label>Nomor SIO  </label>
                         <div>{{$bujp->NO_SIO}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Masa Berlaku <span style="color: red">*</span></label>
+                        <label>Masa Berlaku  </label>
                         <div>{{$bujp->MASA_BERLAKU_SIO}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto SIO <span style="color: red">*</span></label>
+                        <label>Foto SIO  </label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/foto_sio/{{$bujp->FOTO_AKTA}}" width="100%"></div>
                       </div>
                     </div>
@@ -362,7 +361,7 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Status BPJS Ketenaga Kerjaan <span style="color: red">*</span></label>
+                        <label>Status BPJS Ketenaga Kerjaan  </label>
                         <div>{{$bujp->STATUS_BPJS_KETENAGA_KERJAAN}}</div>
                         <option></option>
                           <option>Terdaftar</option>
@@ -378,7 +377,7 @@
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto BPJS Ketenaga Kerjaan </label>
+                        <label>Foto BPJS Ketenaga Kerjaan </label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/bpjs_ketenagakerjaan/{{$bujp->FOTO_BPJS_KETENAGA_KERJAAN}}" width="100%"></div>
                       </div>
                     </div>
@@ -392,7 +391,7 @@
                   <div class="row">
                   <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Status BPJS Kesehatan <span style="color: red">*</span></label>
+                        <label>Status BPJS Kesehatan  </label>
                         <div>{{$bujp->STATUS_BPJS_KESEHATAN}}</div>
                       </div>
                     </div>
@@ -404,7 +403,7 @@
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload Foto BPJS Kesehatan </label>
+                        <label>Foto BPJS Kesehatan </label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/bpjs_kesehatan/{{$bujp->FOTO_BPJS_KESEHATAN}}" width="100%"></div>
                       </div>
                     </div>
@@ -418,7 +417,7 @@
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="form-group">
-                        <label>Upload Rekening Koran <span style="color: red">*</span></label>
+                        <label>Upload Rekening Koran  </label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/rekening_koran/{{$bujp->FOTO_REKENING_KORAN}}" width="100%"></div>
                       </div>
                     </div>
@@ -432,25 +431,25 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Mobil Patroli <span style="color: red">*</span></label>
+                        <label>Mobil Patroli  </label>
                         <div>{{$bujp->MOBIL_PATROLI}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Kepemilikan Mobil <span style="color: red">*</span></label>
+                        <label>Kepemilikan Mobil  </label>
                         <div>{{$bujp->KEPEMILIKAN_MOBIL}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Motor Patroli <span style="color: red">*</span></label>
+                        <label>Motor Patroli  </label>
                         <div>{{$bujp->MOTOR_PATROLI}}</div>
                       </div>
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Kepemilikan Motor <span style="color: red">*</span></label>
+                        <label>Kepemilikan Motor  </label>
                         <div>{{$bujp->KEPEMILIKAN_MOTOR}}</div>
                       </div>
                     </div>
@@ -526,7 +525,7 @@
                       </div>
                       <div class="col-sm-3">
                         <div class="form-group">
-                          <label>Upload foto Pejabat</label>
+                          <label>Foto Pejabat</label>
                           <div class="col-sm-3"><img src="../uploads/rekrutmen/pejabat_tni/{{$bujp->FOTO_PEJABAT_TNI}}" width="100%"></div>
                         </div>
                     </div>
@@ -564,7 +563,7 @@
                     </div>
                     <div class="col-sm-3">
                       <div class="form-group">
-                        <label>Upload foto Pejabat</label>
+                        <label>Foto Pejabat</label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/pejabat_polri/{{$bujp->FOTO_PEJABAT_POLRI}}" width="100%"></div>
                       </div>
                   </div>  
@@ -578,7 +577,7 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
-                        <label>Bukti Lapor SPT Perusahaan <span style="color: red">*</span></label>
+                        <label>Bukti Lapor SPT Perusahaan  </label>
                         <div class="col-sm-3"><img src="../uploads/rekrutmen/spt_perusahaan/{{$bujp->SPT_PERUSAHAAN}}" width="100%"></div>
                       </div>
                     </div>
@@ -593,15 +592,16 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="form-group">
-                      <h4><strong>Hasil Seleksi Awal</strong> <span style="color: red">*</span></h5>
+                      <h4><strong>Hasil Seleksi Awal</strong>  </h5>
                         <H5>{{$bujp->HASIL_SELEKSI}}</H5>
                       </div>
                     </div>
                   </div>
                   <div class="card-footer">
-                  <a href="../{{$bujp->ID_BUJP}}/edit-stakeholder"><button type="button" class="btn btn-primary">Edit</button></a>
-                  <button type="button" class="btn btn-danger">Hapus</button>
-                  <button type="button" class="btn btn-secondary">Kembali</button>
+                  <a href="../{{$bujp->ID_BUJP}}/edit-rekrutmen"><button type="button" class="btn btn-primary">Edit</button></a>
+                  <a href="../{{$bujp->ID_BUJP}}/delete-rekrutmen"><button type="button" class="btn btn-danger">Hapus</button></a>
+                  <a href="/rekrutmen"><button type="button" class="btn btn-secondary">Kembali</button></a>
+                 
                 </div>
               </div>
               <!-- /.card-body -->

@@ -218,20 +218,34 @@
               <!-- form start -->
               
               <br>
+              @if ($pedoman_keamanan == null)
+          
                 <embed type="application/pdf"
-                  src="uploads/pedoman/contoh.pdf" height="1275" width="100%"><embed>
+                  src="" height="1275" width="100%"><embed>
+              @else
+              <div class="col-sm-12">
+                <label> Terakhir diubah pada tanggal {{$pedoman_keamanan->DATE_MODIFIED}} oleh {{$pedoman_keamanan->user->name}}</label>
+              </div>
+              <embed type="application/pdf"
+                  src="uploads/pedoman/{{$pedoman_keamanan->FILE_PEDOMAN}}" height="1275" width="100%"><embed>
+                  @endif
+                 
+                
+                  
               <br>
-              <form action="/entry-stakeholder" method="POST" enctype="multipart/form-data">
+              
+              <form action="/entry-standarisasi-kompetensi" method="POST" enctype="multipart/form-data">
                 @csrf
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label>Upload Standarisasi Kompetensi Terbaru</label>
-                  <input type="file" class="form-control" name="FOTO_P_LAMA">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Upload File</label>
+                    <input type="file" class="form-control" name="FILE_PEDOMAN"> 
+                  </div>
                 </div>
-              </div>
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                
               </form>
                                 </div>
                                   <!-- /.card-footer -->
